@@ -1,0 +1,90 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <title>Santiago M.A.</title>
+
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <script>
+
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-79717139-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body ng-controller="MainController as main">
+<ul>
+    <li>
+        <ul>
+            <li>
+                <span>name</span>
+                <ul class="one">
+                    <li>Santiago M.A.</li>
+                </ul>
+            </li>
+
+            <li class="array">
+                <span>social</span>
+                <ul>
+                    <li ng-repeat="social in main.socialList">
+                        <span>img</span>
+                        <ul class="one">
+                            <li><img alt="{{social.alt}}" src="https://www.google.com/s2/favicons?domain={{social.url}}">
+                            </li>
+                        </ul>
+                        <span>name</span>
+                        <ul class="one">
+                            <li>{{social.alt}}</li>
+                        </ul>
+                        <span>url</span>
+                        <ul class="one">
+                            <li><a href="{{social.url}}"> {{social.url}} </a></li>
+                        </ul>
+
+                    </li>
+                </ul>
+            </li>
+
+            <li class="array">
+                <span>projects</span>
+                <ul>
+                    <li ng-repeat="project in main.projectList">
+                        <span>img</span>
+                        <ul class="one">
+                            <li><img alt="{{project.name}}"
+                                     src="https://www.google.com/s2/favicons?domain={{project.url}}"></li>
+                        </ul>
+                        <span>name</span>
+                        <ul class="one">
+                            <li>{{project.name}}</li>
+                        </ul>
+                        <span>url</span>
+                        <ul class="one">
+                            <li><a href="{{project.url}}"> {{project.url}} </a></li>
+                        </ul>
+                        <span ng-show="project.type == 'github'">downloads</span>
+                        <ul class="one" ng-show="project.type == 'github'">
+                            <li>{{main.getDownloadCount(project.url)}}</li>
+                        </ul>
+                        <span>active</span>
+                        <ul class="one">
+                            <li>{{project.active}}</li>
+                        </ul>
+
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

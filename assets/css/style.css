@@ -1,0 +1,37 @@
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+body > ul::before{
+    content: "{";
+}
+body > ul::after{
+    content: "}";
+}
+li > span::after{
+    content: ":";
+}
+.one {
+    display: inline-block;
+    padding: 0;
+}
+.one > li::before{
+    content: "'";
+}
+.one > li::after{
+    content: "',";
+}
+.array > span::after{
+    content: ":[";
+}
+.array::after{
+    content: "],";
+}
+.array > ul > li::before{
+    content: "{";
+}
+.array > ul > li::after{
+    content: "},";
+}
