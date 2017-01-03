@@ -2,66 +2,37 @@
 
     'use strict';
 
-    angular.module('app', [])
+    angular.module('santima_xyz', [])
         .controller('MainController', function() {
-            var that = this;
+            var ctrl = this;
 
-            that.socialList = [
+            ctrl.socialList = [
                 {
                     'alt':'Github',
-                    'url':'https://github.com/SantiMA10/'
+                    'url':'https://github.com/SantiMA10/',
+                    'icon' : 'assets/img/social_github.png'
                 },
                 {
                     'alt':'Twitter',
-                    'url':'https://twitter.com/SantiMA10/'
+                    'url':'https://twitter.com/SantiMA10/',
+                    'icon' : 'assets/img/social_twitter.png'
                 },
                 {
                     'alt':'Blog',
-                    'url':'https://medium.com/@Santi'
+                    'url':'https://medium.com/@Santi',
+                    'icon' : 'assets/img/social_medium.png'
+                },
+                {
+                    'alt':'LinkedIn',
+                    'url':'https://www.linkedin.com/in/santiago-martin-agra',
+                    'icon' : 'assets/img/social_linkedin.png'
+                },
+                {
+                    'alt':'Trut',
+                    'url':'https://www.youtube.com/user/TRUToficial',
+                    'icon' : 'assets/img/social_youtube.png'
                 }
             ];
-
-            that.projectList = [
-                {
-                    'name':'Trut',
-                    'url':'https://www.youtube.com/user/TRUToficial',
-                    'active':true
-                },
-                {
-                    'name':'YouWatch a Pebble Watchface (JavaScript)',
-                    'url':'https://github.com/SantiMA10/YouWatch',
-                    'active':true
-                },
-                {
-                    'name':'Internet Status Check (Angular & Node.js)',
-                    'url':'https://github.com/SantiMA10/Internet-Status-Check',
-                    'active':true
-                },
-                {
-                    'name':'CampusVirtualPlus (Extension Google Chrome)',
-                    'url':'https://github.com/SantiMA10/CampusVirtualPlus',
-                    'active':true
-                },
-                {
-                    'name':'DNS Autoupdate (Node.js)',
-                    'url':'https://github.com/SantiMA10/DNS-Autoupdate',
-                    'active':true
-                },
-                {
-                    'name':'Change macOS Screenshot Folder (Swift)',
-                    'url':'https://github.com/SantiMA10/Change-macOS-Screenshot-Folder',
-                    'active':true
-                },
-                {
-                    'name':'Change OSX Screenshot Folder (Java)',
-                    'url':'https://github.com/SantiMA10/Change-OS-X-Screenshot-Folder',
-                    'active':false
-                },
-            ];
-
-            that.getDownloadCount = function(url){
-              return 20;
-            };
 
         });
 

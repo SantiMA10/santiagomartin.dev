@@ -1,37 +1,38 @@
-a{
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile {
+    border-radius: 50%;
+    height: 150px;
+    vertical-align:middle;
+}
+
+.about{
+    font-size: xx-large;
+}
+
+.social{
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.social > a > img {
+    width: 32px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+body {
+    background-image: url('./../img/background.png');
+    background-size: cover;
+    font-family: 'Lato', sans-serif;
+}
+
+a {
     text-decoration: none;
-}
-li{
-    list-style: none;
-}
-body > ul::before{
-    content: "{";
-}
-body > ul::after{
-    content: "}";
-}
-li > span::after{
-    content: ":";
-}
-.one {
-    display: inline-block;
-    padding: 0;
-}
-.one > li::before{
-    content: "'";
-}
-.one > li::after{
-    content: "',";
-}
-.array > span::after{
-    content: ":[";
-}
-.array::after{
-    content: "],";
-}
-.array > ul > li::before{
-    content: "{";
-}
-.array > ul > li::after{
-    content: "},";
 }
