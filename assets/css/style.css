@@ -29,8 +29,10 @@
 
 body {
     background-image: url('./../img/background.png');
-    background-size: cover;
+    background-size: unset;
+    background-position: center;
     font-family: 'Lato', sans-serif;
+    background-repeat: no-repeat;
 }
 
 a {
