@@ -5,4 +5,4 @@
   publish = "dist/"
 
   # Default build command.
-  command = "yarn build"
+  command = "yarn generate"
