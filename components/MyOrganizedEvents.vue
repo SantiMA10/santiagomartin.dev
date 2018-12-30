@@ -2,14 +2,14 @@
   <section
     id="events"
     class="w-3/4">
-    <h1 class="mb-2">
+    <h1 class="mb-4">
       Organized events
     </h1>
     <ul class="list-reset">
       <li
         v-for="{time, event} in events"
         :key="time"
-        class="ml-5"
+        class="sm:ml-5 mb-2"
       >
         🗓 {{ time | formatTime }} - <MyLink :link="event"/>
       </li>

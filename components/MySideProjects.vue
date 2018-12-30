@@ -2,14 +2,14 @@
   <section
     id="sideprojects"
     class="w-3/4">
-    <h1 class="mb-2">
+    <h1 class="mb-4">
       Side projects
     </h1>
     <ul class="list-reset">
       <li
         v-for="({description, code, name}, index) in projects"
         :key="index"
-        class="ml-5"
+        class="sm:ml-5 mb-2"
       >
         👨🏻‍💻 <MyLink :link="name"/> - {{ description }} <span v-if="code"> - <a :href="code">GitHub</a> </span>
       </li>

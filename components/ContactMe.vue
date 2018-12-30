@@ -2,14 +2,14 @@
   <section
     id="events"
     class="w-3/4">
-    <h1 class="mb-2">
+    <h1 class="mb-4">
       Contact me
     </h1>
     <ul class="list-reset">
       <li
         v-for="(socialNetwork, index) in socialNetworks"
         :key="index"
-        class="ml-5"
+        class="sm:ml-5 mb-2"
       >
         <MyLink :link="socialNetwork"/>
       </li>

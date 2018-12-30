@@ -1,10 +1,10 @@
 <template>
   <main class="flex items-center flex-col">
     <AboutMe class="mt-10"/>
-    <MyTalks class="mt-10"/>
-    <MySideProjects class="mt-10"/>
-    <MyOrganizedEvents class="mt-10"/>
-    <ContactMe class="mt-10"/>
+    <MyTalks class="mt-5"/>
+    <MySideProjects class="mt-5"/>
+    <MyOrganizedEvents class="mt-5"/>
+    <ContactMe class="mt-5"/>
   </main>
 </template>
 

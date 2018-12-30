@@ -2,14 +2,14 @@
   <section
     id="talks"
     class="w-3/4">
-    <h1 class="mb-2">
+    <h1 class="mb-4">
       Talks
     </h1>
     <ul class="list-reset">
       <li
         v-for="{talk, time, event} in talks"
         :key="time"
-        class="ml-5"
+        class="sm:ml-5 mb-2"
       >
         🗣 {{ time | formatTime }} - <MyLink :link="event"/> - <MyLink :link="talk"/>
       </li>
