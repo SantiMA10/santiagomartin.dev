@@ -1,6 +1,6 @@
 <template>
   <section
-    id="events"
+    id="me"
     class="w-3/4">
     <h1 class="mb-4">
       Contact me
