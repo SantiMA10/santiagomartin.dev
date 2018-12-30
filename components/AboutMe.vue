@@ -1,5 +1,7 @@
 <template>
-  <section class="w-3/4">
+  <section
+    id="aboutme"
+    class="w-3/4">
     <h1 class="mb-2">
       Hi 👋🏻, I'm Santi
     </h1>
