@@ -7,7 +7,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'Santiago Martín Agra | Software engineer',
     htmlAttrs: {
       lang: 'en'
     },
