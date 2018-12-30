@@ -8,7 +8,7 @@
     <ul class="list-reset">
       <li
         v-for="{talk, time, event} in talks"
-        :key="talk.time"
+        :key="time"
         class="ml-5"
       >
         🗣 {{ time | formatTime }} - <MyLink :link="event"/> - <MyLink :link="talk"/>
