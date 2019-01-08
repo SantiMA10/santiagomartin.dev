@@ -39,4 +39,10 @@ export default {
 </script>
 
 <style>
+@media (prefers-color-scheme: dark) {
+  body {
+    color: white;
+    background: black;
+  }
+}
 </style>
