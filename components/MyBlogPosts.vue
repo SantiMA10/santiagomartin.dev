@@ -11,7 +11,9 @@
         :key="key"
         class="sm:ml-5 mb-2"
       >
-        📝 {{ time | formatTime }} - <a :href="url">{{ title }}</a>
+        📝 {{ time | formatTime }} - <a 
+          :href="url" 
+          target="_blank">{{ title }}</a>
       </li>
     </ul>
   </section>

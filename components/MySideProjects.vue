@@ -11,7 +11,9 @@
         :key="index"
         class="sm:ml-5 mb-2"
       >
-        👨🏻‍💻 <MyLink :link="name"/> - {{ description }} <span v-if="code"> - <a :href="code">GitHub</a> </span>
+        👨🏻‍💻 <MyLink :link="name"/> - {{ description }} <span v-if="code"> - <a 
+          :href="code" 
+          target="_blank">GitHub</a> </span>
       </li>
     </ul>
   </section>

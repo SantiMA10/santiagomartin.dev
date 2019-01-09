@@ -13,7 +13,8 @@ export default {
 
     return h('a', {
       attrs: {
-        href: this.link.url
+        href: this.link.url,
+        target: '_blank'
       },
       domProps: {
         innerHTML: this.link.name
