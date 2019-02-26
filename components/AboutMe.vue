@@ -13,7 +13,7 @@
     <p class="mb-2">
       Actually I work for a company called <a
         target="_blank"
-        href="https://simbiosys.es">Simbiosys</a>, co-organize <a
+        href="https://privacycloud.com">Privacy Cloud</a>, co-organize <a
           target="_blank"
           href="https://www.meetup.com/es-ES/GDG-Asturias">GDG Asturias</a> and I have fun coding some <a href="#sideprojects">side projects</a>.
     </p>
