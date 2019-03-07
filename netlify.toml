@@ -10,14 +10,17 @@
 [[redirects]]
   from = "https://santi.netlify.com/*"
   to = "https://santiagomartin.dev/:splat"
-  status = 301!
+  status = 301
+  force = true
 
 [[redirects]]
   from = "https://santima.xyz/*"
   to = "https://santiagomartin.dev/:splat"
-  status = 301!
+  status = 301
+  force = true
 
 [[redirects]]
   from = "https://www.santiagomartin.dev/*"
   to = "https://santiagomartin.dev/:splat"
-  status = 301!
+  status = 301
+  force = true
