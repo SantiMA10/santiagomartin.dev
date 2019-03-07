@@ -44,6 +44,10 @@ export default {
         {
           name: 'GitHub',
           url: 'https://github.com/SantiMA10'
+        },
+        {
+          name: 'Email',
+          url: 'mailto:hi@santiagomartin.dev'
         }
       ]
     }
