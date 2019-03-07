@@ -6,6 +6,11 @@ export default {
       type: Object
     }
   },
+  computed: {
+    isMailTo() {
+      return this.link.url.includes('mailto')
+    }
+  },
   render(h) {
     if (!this.link.url) {
       return h('span', this.link.name)
@@ -14,7 +19,7 @@ export default {
     return h('a', {
       attrs: {
         href: this.link.url,
-        target: '_blank'
+        target: this.isMailTo ? '' : '_blank'
       },
       domProps: {
         innerHTML: this.link.name
