@@ -1,4 +1,4 @@
-# SantiMA.xyz
+# santiagomartin.dev
 
 > My personal website
 
