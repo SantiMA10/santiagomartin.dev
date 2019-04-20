@@ -1,19 +1,17 @@
 <template>
-  <section
-    id="sideprojects"
-    class="w-3/4">
+  <section id="sideprojects" class="w-3/4">
     <h1 class="mb-4">
       Side projects
     </h1>
     <ul class="list-reset">
       <li
-        v-for="({description, code, name}, index) in projects"
+        v-for="({ description, code, name }, index) in projects"
         :key="index"
         class="sm:ml-5 mb-2"
       >
-        👨🏻‍💻 <MyLink :link="name"/> - {{ description }} <span v-if="code"> - <a 
-          :href="code" 
-          target="_blank">GitHub</a> </span>
+        👨🏻‍💻
+        <MyLink :link="name" /> - {{ description }}
+        <span v-if="code"> - <a :href="code" target="_blank">GitHub</a> </span>
       </li>
     </ul>
   </section>

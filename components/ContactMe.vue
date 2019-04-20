@@ -1,7 +1,5 @@
 <template>
-  <section
-    id="me"
-    class="w-3/4">
+  <section id="me" class="w-3/4">
     <h1 class="mb-4">
       Contact me
     </h1>
@@ -11,7 +9,7 @@
         :key="index"
         class="sm:ml-5 mb-2"
       >
-        <MyLink :link="socialNetwork"/>
+        <MyLink :link="socialNetwork" />
       </li>
     </ul>
   </section>

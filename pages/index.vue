@@ -1,13 +1,11 @@
 <template>
   <main class="flex items-center flex-col">
-    <AboutMe class="mt-10"/>
-    <MyBlogPosts
-      :posts="posts"
-      class="mt-5"/>
-    <MyTalks class="mt-5"/>
-    <MySideProjects class="mt-5"/>
-    <MyOrganizedEvents class="mt-5"/>
-    <ContactMe class="mt-5"/>
+    <AboutMe class="mt-10" />
+    <MyBlogPosts :posts="posts" class="mt-5" />
+    <MyTalks class="mt-5" />
+    <MySideProjects class="mt-5" />
+    <MyOrganizedEvents class="mt-5" />
+    <ContactMe class="mt-5" />
   </main>
 </template>
 

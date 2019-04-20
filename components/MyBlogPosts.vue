@@ -1,19 +1,16 @@
 <template>
-  <section
-    id="talks"
-    class="w-3/4">
+  <section id="talks" class="w-3/4">
     <h1 class="mb-4">
       My blog posts
     </h1>
     <ul class="list-reset">
       <li
-        v-for="({title, url, time, key}) in lastest"
+        v-for="{ title, url, time, key } in lastest"
         :key="key"
         class="sm:ml-5 mb-2"
       >
-        📝 {{ time | formatTime }} - <a 
-          :href="url" 
-          target="_blank">{{ title }}</a>
+        📝 {{ time | formatTime }} -
+        <a :href="url" target="_blank">{{ title }}</a>
       </li>
     </ul>
   </section>
