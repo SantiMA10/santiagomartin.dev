@@ -1,4 +1,5 @@
-# santiagomartin.dev [![Netlify Status](https://api.netlify.com/api/v1/badges/54b1a95c-f724-43f6-a303-192c4de9c77e/deploy-status)](https://app.netlify.com/sites/santi/deploys)
+# santiagomartin.dev [![Netlify Status](https://api.netlify.com/api/v1/badges/54b1a95c-f724-43f6-a303-192c4de9c77e/deploy-status)](https://app.netlify.com/sites/santi/deploys) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=SantiMA10/santiagomartin.dev)](https://dependabot.com)
+
 
 > My personal website
 
