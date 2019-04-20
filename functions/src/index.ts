@@ -1,8 +1,8 @@
 import * as functions from 'firebase-functions'
-import axios from 'axios'
+import { runWebHook } from './services/runWebHook'
 
-export const scheduledFunctionCrontab = functions.pubsub
+export const deployWebsiteCron = functions.pubsub
   .schedule('every 24 hours')
   .onRun(() => {
-    return axios.post(functions.config().netlify.webhook)
+    return runWebHook(functions.config().netlify.webhook)
   })
