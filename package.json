@@ -15,7 +15,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.4.1",
     "cross-env": "^5.2.0",
-    "luxon": "^1.12.1",
+    "luxon": "^1.13.0",
     "nuxt": "^2.6.3"
   },
   "devDependencies": {
