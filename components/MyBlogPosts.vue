@@ -17,13 +17,9 @@
 </template>
 
 <script>
-import MyLink from './MyLink'
 import { DateTime } from 'luxon'
 
 export default {
-  components: {
-    MyLink
-  },
   filters: {
     formatTime(time) {
       return DateTime.fromMillis(time).toFormat('MMM yyyy')
