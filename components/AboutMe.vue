@@ -12,7 +12,7 @@
       >.
     </p>
     <p class="mb-2">
-      Actually I work for a company called
+      Currently I work for a company called
       <a target="_blank" href="https://privacycloud.com">Privacy Cloud</a>,
       co-organize
       <a target="_blank" href="https://www.meetup.com/es-ES/GDG-Asturias"
