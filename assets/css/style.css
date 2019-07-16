@@ -3,5 +3,5 @@
 }
 
 a {
-  @apply text-blue no-underline;
+  @apply text-blue-500 no-underline;
 }

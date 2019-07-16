@@ -32,21 +32,21 @@ export default {
   data() {
     return {
       talks: [
-         {
+        {
           time: 1563231600000,
           event: {
-            name: 'TLP Innova'
+            name: 'TLP Innova',
+            url: 'https://tlp-tenerife.com/tlpinnova/'
           },
           talk: {
             name: '¿Por qué elegir Firebase? 🔥',
-            url:
-              'http://bit.ly/FirebaseTLP2019'
+            url: 'http://bit.ly/FirebaseTLP2019'
           }
         },
         {
           time: 1544781600000,
           event: {
-            name: 'Internal training in Simbiosys'
+            name: 'Internal training'
           },
           talk: {
             name: 'git 101',

@@ -29,6 +29,13 @@ export default {
     return {
       events: [
         {
+          time: 1554505200000,
+          event: {
+            name: 'WTM Asturias 2019',
+            url: 'https://www.meetup.com/es-ES/GDG-Asturias/events/258756592/'
+          }
+        },
+        {
           time: 1543654800000,
           event: {
             name: 'DevFest Asturias 2018',
@@ -38,7 +45,7 @@ export default {
         {
           time: 1523692800000,
           event: {
-            name: 'Women Techmakers Asturias 2018',
+            name: 'WTM Asturias 2018',
             url: 'https://www.meetup.com/GDG-Asturias/events/246868757/'
           }
         }
