@@ -27,11 +27,13 @@ export default {
     ContactMe
   },
   async asyncData({ $axios }) {
-    const { data } = await $axios.get(
-      'https://medium.com/@santi/latest?format=json'
-    )
-    const { payload } = JSON.parse(data.replace('])}while(1);</x>', ''))
-    return { posts: payload.references.Post }
+    try {
+      const { data } = await $axios.get('https://medium.com/@santi?format=json')
+      const { payload } = JSON.parse(data.replace('])}while(1);</x>', ''))
+      return { posts: payload.references.Post }
+    } catch (e) {
+      return { posts: {} }
+    }
   }
 }
 </script>
