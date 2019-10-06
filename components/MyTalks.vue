@@ -1,6 +1,6 @@
 <template>
   <section id="talks" class="w-3/4">
-    <h1 class="mb-4">
+    <h1 class="mb-4 font-bold">
       Talks
     </h1>
     <ul class="list-reset">

@@ -1,6 +1,6 @@
 <template>
   <section id="events" class="w-3/4">
-    <h1 class="mb-4">
+    <h1 class="mb-4 font-bold">
       Organized events
     </h1>
     <ul class="list-reset">

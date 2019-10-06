@@ -1,9 +1,9 @@
 <template>
   <section id="talks" class="w-3/4">
-    <h1 class="mb-4">
+    <h1 class="mb-4 font-bold">
       My blog posts
     </h1>
-    <ul class="list-reset">
+    <ul v-if="lastest.length > 0" class="list-reset">
       <li
         v-for="{ title, url, time, key } in lastest"
         :key="key"
@@ -13,6 +13,10 @@
         <a :href="url" target="_blank">{{ title }}</a>
       </li>
     </ul>
+    <p v-else>
+      Ups... something happens with the Medium's API, you can check my
+      <a target="_blank" href="https://medium.com/@Santi">Medium</a> directly.
+    </p>
   </section>
 </template>
 
