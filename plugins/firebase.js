@@ -8,8 +8,10 @@ const firebaseConfig = {
   projectId: 'santima-xyz',
   storageBucket: 'santima-xyz.appspot.com',
   messagingSenderId: '845997725997',
-  appId: '1:845997725997:web:930fe06c544f5155'
+  appId: '1:845997725997:web:930fe06c544f5155',
+  measurementId: 'G-M43RY54TJL'
 }
 
 firebase.initializeApp(firebaseConfig)
 firebase.performance()
+firebase.analytics()
