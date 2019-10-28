@@ -13,7 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.6.0",
+    "@nuxtjs/axios": "^5.8.0",
     "cross-env": "^6.0.3",
     "firebase": "^7.2.1",
     "luxon": "^1.19.3",
