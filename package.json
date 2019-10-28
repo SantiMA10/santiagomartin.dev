@@ -17,7 +17,7 @@
     "cross-env": "^6.0.3",
     "firebase": "^7.2.1",
     "luxon": "^1.19.3",
-    "nuxt": "^2.10.1"
+    "nuxt": "^2.10.2"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.5",
