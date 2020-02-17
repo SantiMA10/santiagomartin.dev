@@ -15,7 +15,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.9.5",
     "cross-env": "^7.0.0",
-    "firebase": "^7.8.1",
+    "firebase": "^7.8.2",
     "luxon": "^1.22.0",
     "nuxt": "^2.11.0"
   },
