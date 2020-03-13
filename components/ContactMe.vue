@@ -44,6 +44,10 @@ export default {
           url: 'https://github.com/SantiMA10'
         },
         {
+          name: 'Twitch',
+          url: 'https://twitch.tv/SantiMA10'
+        },
+        {
           name: 'Email',
           url: 'mailto:hi@santiagomartin.dev'
         }
