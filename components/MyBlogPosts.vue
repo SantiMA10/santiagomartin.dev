@@ -21,12 +21,12 @@
 </template>
 
 <script>
-import { DateTime } from 'luxon'
+import { DateTime } from "luxon";
 
 export default {
   filters: {
     formatTime(time) {
-      return DateTime.fromMillis(time).toFormat('MMM yyyy')
+      return DateTime.fromMillis(time).toFormat("MMM yyyy");
     }
   },
   props: {
@@ -40,18 +40,18 @@ export default {
       return (
         Object.keys(this.posts)
           .map(key => {
-            const { title, firstPublishedAt, uniqueSlug } = this.posts[key]
+            const { title, firstPublishedAt, uniqueSlug } = this.posts[key];
             return {
               time: firstPublishedAt,
               url: `https://medium.com/@Santi/${uniqueSlug}`,
               key,
               title
-            }
+            };
           })
           // get the last 3 post
           .slice(0, 3)
-      )
+      );
     }
   }
-}
+};
 </script>

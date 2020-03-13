@@ -18,8 +18,7 @@
 </template>
 
 <script>
-import MyLink from './MyLink'
-import { DateTime } from 'luxon'
+import MyLink from "./MyLink";
 
 export default {
   components: {
@@ -30,44 +29,44 @@ export default {
       projects: [
         {
           name: {
-            name: 'Excuse generator',
+            name: "Excuse generator",
             url:
-              'https://alexa.amazon.es/spa/index.html#skills/dp/B07HY37SP6/?ref=skill_dsk_skb_sr_0&qid=1546168908'
+              "https://alexa.amazon.es/spa/index.html#skills/dp/B07HY37SP6/?ref=skill_dsk_skb_sr_0&qid=1546168908"
           },
-          description: 'A simple Alexa Skill'
+          description: "A simple Alexa Skill"
         },
         {
           name: {
-            name: 'E-Sports Calendar',
-            url: 'https://esportscalendar.app'
+            name: "E-Sports Calendar",
+            url: "https://esportscalendar.app"
           },
-          description: 'A spanish esports calendar app'
+          description: "A spanish esports calendar app"
         },
         {
           name: {
-            name: 'Share Links',
-            url: 'https://sharelinks.app'
+            name: "Share Links",
+            url: "https://sharelinks.app"
           },
-          description: 'Create and share link lists, quick and easy'
+          description: "Create and share link lists, quick and easy"
         },
         {
           name: {
-            name: 'Excuse generator',
+            name: "Excuse generator",
             url:
-              'https://alexa.amazon.es/spa/index.html#skills/dp/B07HY37SP6/?ref=skill_dsk_skb_sr_0&qid=1546168908'
+              "https://alexa.amazon.es/spa/index.html#skills/dp/B07HY37SP6/?ref=skill_dsk_skb_sr_0&qid=1546168908"
           },
-          description: 'A simple Action on Google',
-          code: 'https://github.com/SantiMA10/excuse-generator'
+          description: "A simple Action on Google",
+          code: "https://github.com/SantiMA10/excuse-generator"
         },
         {
           name: {
-            name: 'YouWatch'
+            name: "YouWatch"
           },
-          description: 'A watchface for Pebble',
-          code: 'https://github.com/SantiMA10/YouWatch'
+          description: "A watchface for Pebble",
+          code: "https://github.com/SantiMA10/YouWatch"
         }
       ]
-    }
+    };
   }
-}
+};
 </script>

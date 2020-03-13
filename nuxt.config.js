@@ -1,27 +1,27 @@
-const pkg = require('./package')
+const pkg = require("./package");
 
 module.exports = {
-  mode: 'universal',
+  mode: "universal",
 
   /*
    ** Headers of the page
    */
   head: {
-    title: 'Santiago Martín Agra | Software engineer',
+    title: "Santiago Martín Agra | Software engineer",
     htmlAttrs: {
-      lang: 'en'
+      lang: "en"
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
-        rel: 'preload',
-        as: 'style',
-        href: 'https://fonts.googleapis.com/css?family=Source+Code+Pro'
+        rel: "preload",
+        as: "style",
+        href: "https://fonts.googleapis.com/css?family=Source+Code+Pro"
       }
     ]
   },
@@ -29,24 +29,24 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: "#fff" },
 
   /*
    ** Global CSS
    */
-  css: ['~/assets/css/tailwind.css', '~/assets/css/style.css'],
+  css: ["~/assets/css/tailwind.css", "~/assets/css/style.css"],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~/plugins/firebase.js', ssr: false }],
+  plugins: [{ src: "~/plugins/firebase.js", ssr: false }],
 
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    "@nuxtjs/axios"
   ],
   /*
    ** Axios module configuration
@@ -66,12 +66,12 @@ module.exports = {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
-          enforce: 'pre',
+          enforce: "pre",
           test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
+          loader: "eslint-loader",
           exclude: /(node_modules)/
-        })
+        });
       }
     }
   }
-}
+};

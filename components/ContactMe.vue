@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import MyLink from './MyLink'
-import { DateTime } from 'luxon'
+import MyLink from "./MyLink";
+import { DateTime } from "luxon";
 
 export default {
   components: {
@@ -25,34 +25,34 @@ export default {
   },
   filters: {
     formatTime(time) {
-      return DateTime.fromMillis(time).toFormat('MMM yyyy')
+      return DateTime.fromMillis(time).toFormat("MMM yyyy");
     }
   },
   data() {
     return {
       socialNetworks: [
         {
-          name: 'Twitter',
-          url: 'https://twitter.com/SantiMA10'
+          name: "Twitter",
+          url: "https://twitter.com/SantiMA10"
         },
         {
-          name: 'LinkedIn',
-          url: 'https://www.linkedin.com/in/santiago-martin-agra/'
+          name: "LinkedIn",
+          url: "https://www.linkedin.com/in/santiago-martin-agra/"
         },
         {
-          name: 'GitHub',
-          url: 'https://github.com/SantiMA10'
+          name: "GitHub",
+          url: "https://github.com/SantiMA10"
         },
         {
-          name: 'Twitch',
-          url: 'https://twitch.tv/SantiMA10'
+          name: "Twitch",
+          url: "https://twitch.tv/SantiMA10"
         },
         {
-          name: 'Email',
-          url: 'mailto:hi@santiagomartin.dev'
+          name: "Email",
+          url: "mailto:hi@santiagomartin.dev"
         }
       ]
-    }
+    };
   }
-}
+};
 </script>

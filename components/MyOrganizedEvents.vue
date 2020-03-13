@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import MyLink from './MyLink'
-import { DateTime } from 'luxon'
+import MyLink from "./MyLink";
+import { DateTime } from "luxon";
 
 export default {
   components: {
@@ -22,7 +22,7 @@ export default {
   },
   filters: {
     formatTime(time) {
-      return DateTime.fromMillis(time).toFormat('MMM yyyy')
+      return DateTime.fromMillis(time).toFormat("MMM yyyy");
     }
   },
   data() {
@@ -31,26 +31,26 @@ export default {
         {
           time: 1554505200000,
           event: {
-            name: 'WTM Asturias 2019',
-            url: 'https://www.meetup.com/es-ES/GDG-Asturias/events/258756592/'
+            name: "WTM Asturias 2019",
+            url: "https://www.meetup.com/es-ES/GDG-Asturias/events/258756592/"
           }
         },
         {
           time: 1543654800000,
           event: {
-            name: 'DevFest Asturias 2018',
-            url: 'https://www.meetup.com/GDG-Asturias/events/254241974/'
+            name: "DevFest Asturias 2018",
+            url: "https://www.meetup.com/GDG-Asturias/events/254241974/"
           }
         },
         {
           time: 1523692800000,
           event: {
-            name: 'WTM Asturias 2018',
-            url: 'https://www.meetup.com/GDG-Asturias/events/246868757/'
+            name: "WTM Asturias 2018",
+            url: "https://www.meetup.com/GDG-Asturias/events/246868757/"
           }
         }
       ]
-    }
+    };
   }
-}
+};
 </script>

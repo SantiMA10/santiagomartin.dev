@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import AboutMe from '~/components/AboutMe'
-import MyTalks from '~/components/MyTalks'
-import MyBlogPosts from '~/components/MyBlogPosts'
-import MySideProjects from '~/components/MySideProjects'
-import MyOrganizedEvents from '~/components/MyOrganizedEvents'
-import ContactMe from '~/components/ContactMe'
+import AboutMe from "~/components/AboutMe";
+import MyTalks from "~/components/MyTalks";
+import MyBlogPosts from "~/components/MyBlogPosts";
+import MySideProjects from "~/components/MySideProjects";
+import MyOrganizedEvents from "~/components/MyOrganizedEvents";
+import ContactMe from "~/components/ContactMe";
 
 export default {
   components: {
@@ -28,14 +28,16 @@ export default {
   },
   async asyncData({ $axios }) {
     try {
-      const { data } = await $axios.get('https://medium.com/@santi?format=json')
-      const { payload } = JSON.parse(data.replace('])}while(1);</x>', ''))
-      return { posts: payload.references.Post }
+      const { data } = await $axios.get(
+        "https://medium.com/@santi?format=json"
+      );
+      const { payload } = JSON.parse(data.replace("])}while(1);</x>", ""));
+      return { posts: payload.references.Post };
     } catch (e) {
-      return { posts: {} }
+      return { posts: {} };
     }
   }
-}
+};
 </script>
 
 <style>
