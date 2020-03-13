@@ -4,7 +4,8 @@
       Hi 👋🏻, I'm Santi<span v-if="live">
         and you can watch me live on
         <a href="https://twitch.tv/santima10" target="_blank">Twitch</a>
-        now</span
+        now
+        <div class="circle red inline-block"/></span
       >.
     </h1>
     <p class="mb-2">
@@ -45,3 +46,30 @@ export default {
   }
 };
 </script>
+
+<style>
+@keyframes up-right {
+  0% {
+    transform: scale();
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale (1, 5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.25;
+  }
+}
+.circle {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  opacity: 0.25;
+}
+.red {
+  background-color: red;
+  animation: up-right 1s infinite;
+}
+</style>
