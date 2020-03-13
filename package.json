@@ -20,7 +20,11 @@
     "luxon": "^1.22.0",
     "nuxt": "^2.11.0"
   },
+  "engines": {
+    "node": "12"
+  },
   "devDependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "autoprefixer": "^9.7.4",
     "babel-eslint": "^10.1.0",
     "core-js": "^2.0.0",

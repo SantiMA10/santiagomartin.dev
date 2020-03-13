@@ -1,7 +1,11 @@
 <template>
   <section id="aboutme" class="w-3/4">
     <h1 class="mb-4">
-      Hi 👋🏻, I'm Santi.
+      Hi 👋🏻, I'm Santi<span v-if="live">
+        and you can watch me live on
+        <a href="https://twitch.tv/santima10" target="_blank">Twitch</a>
+        now</span
+      >.
     </h1>
     <p class="mb-2">
       I'm a software engineer who lives in Gijón, Asturias.
@@ -21,3 +25,23 @@
     </p>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      live: false
+    };
+  },
+  async mounted() {
+    const { data } = await fetch(
+      "https://api.twitch.tv/helix/streams?user_login=santima10",
+      {
+        headers: { "Client-ID": process.env.NUXT_ENV_TWITCH_CLIENT_ID }
+      }
+    ).then(res => res.json());
+
+    this.live = data?.length > 0;
+  }
+};
+</script>

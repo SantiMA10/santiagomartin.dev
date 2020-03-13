@@ -73,5 +73,10 @@ module.exports = {
         });
       }
     }
-  }
+  },
+
+  buildModules: [
+    // Simple usage
+    "@nuxtjs/dotenv"
+  ]
 };
