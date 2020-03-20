@@ -1,8 +1,6 @@
 <template>
   <section id="sideprojects" class="w-3/4">
-    <h1 class="mb-4 font-bold">
-      Side projects
-    </h1>
+    <h1 class="mb-4 font-bold">Side projects</h1>
     <ul class="list-reset">
       <li
         v-for="({ description, code, name }, index) in projects"
@@ -10,8 +8,12 @@
         class="sm:ml-5 mb-2"
       >
         👨🏻‍💻
-        <MyLink :link="name" /> - {{ description }}
-        <span v-if="code"> - <a :href="code" target="_blank">GitHub</a> </span>
+        <MyLink :link="name" />
+        - {{ description }}
+        <span v-if="code">
+          -
+          <a :href="code" target="_blank">GitHub</a>
+        </span>
       </li>
     </ul>
   </section>
@@ -27,6 +29,13 @@ export default {
   data() {
     return {
       projects: [
+        {
+          name: {
+            name: "DevOps for Stream Deck",
+            url: "https://github.com/SantiMA10/devops-streamdeck"
+          },
+          description: "Check the status of your GitLab CI or GitHub Actions."
+        },
         {
           name: {
             name: "Excuse generator",
