@@ -18,7 +18,7 @@
     "cross-env": "^7.0.0",
     "firebase": "^7.13.1",
     "luxon": "^1.22.0",
-    "nuxt": "^2.12.0"
+    "nuxt": "^2.12.1"
   },
   "engines": {
     "node": "12"
