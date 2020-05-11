@@ -24,6 +24,7 @@ a {
   @apply text-blue-500 no-underline;
 }
 
+/* purgecss ignore */
 @media (prefers-color-scheme: dark) {
   body {
     color: white;
