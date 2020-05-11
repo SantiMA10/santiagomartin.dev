@@ -1,16 +1,18 @@
 import Head from "next/head";
 import { getPostFromMedium } from "../services/getPostFromMedium";
 import { BlogPosts } from "../components/BlogPosts";
+import { AboutMe } from "../components/AboutMe";
 
 export default function Home({ posts }) {
   return (
-    <div className="container">
+    <div>
       <Head>
         <title>Santiago Martín Agra | Software Engineer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="flex items-center flex-col">
+        <AboutMe live={true} />
         <BlogPosts posts={posts} />
       </main>
     </div>
