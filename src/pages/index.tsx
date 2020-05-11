@@ -4,8 +4,9 @@ import { BlogPosts } from "../components/BlogPosts";
 import { AboutMe } from "../components/AboutMe";
 import { getSideProjects } from "../services/getSideProjects";
 import { SideProjects } from "../components/SideProjects";
+import { getLiveState } from "../services/getLiveStatus";
 
-export default function Home({ posts, projects }) {
+export default function Home({ posts, projects, live }) {
   return (
     <div>
       <Head>
@@ -14,7 +15,7 @@ export default function Home({ posts, projects }) {
       </Head>
 
       <main className="flex items-center flex-col">
-        <AboutMe live={true} />
+        <AboutMe live={live} />
         <BlogPosts posts={posts} />
         <SideProjects projects={projects} />
       </main>
@@ -25,11 +26,13 @@ export default function Home({ posts, projects }) {
 export async function getStaticProps() {
   const { posts } = await getPostFromMedium();
   const { projects } = await getSideProjects();
+  const { live } = await getLiveState();
 
   return {
     props: {
       posts,
       projects,
+      live,
     }, // will be passed to the page component as props
   };
 }

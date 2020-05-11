@@ -9,8 +9,8 @@ export function SideProjects({ projects }: Props) {
     <section id="sideprojects" className="w-3/4 mt-5">
       <h1 className="mb-4 font-bold">Side projects</h1>
       <ul className="list-reset">
-        {projects.map(({ description, code, title }) => (
-          <li key={title.text} className="sm:ml-5 mb-2">
+        {projects.map(({ id, description, code, title }) => (
+          <li key={id} className="sm:ml-5 mb-2">
             👨🏻‍💻 <a href={title.url}>{title.text}</a> - {description}
             {code && (
               <span>

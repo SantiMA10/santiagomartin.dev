@@ -10,6 +10,7 @@ export const getSideProjects = async (): Promise<Response> => {
   return {
     projects: [
       {
+        id: "klgfld",
         title: {
           text: "DevOps for Stream Deck",
           url: "https://github.com/SantiMA10/devops-streamdeck",
@@ -19,6 +20,7 @@ export const getSideProjects = async (): Promise<Response> => {
         code: "https://github.com/SantiMA10/devops-streamdeck",
       },
       {
+        id: "klgfdkgjfs",
         title: {
           text: "Excuse generator",
           url:
@@ -27,6 +29,7 @@ export const getSideProjects = async (): Promise<Response> => {
         description: "A simple Alexa Skill",
       },
       {
+        id: "mnvbmcnb",
         title: {
           text: "E-Sports Calendar",
           url: "https://esportscalendar.app",
@@ -34,6 +37,7 @@ export const getSideProjects = async (): Promise<Response> => {
         description: "A spanish esports calendar app",
       },
       {
+        id: "esto-se-come",
         title: {
           text: "Share Links",
           url: "https://sharelinks.app",
@@ -41,6 +45,7 @@ export const getSideProjects = async (): Promise<Response> => {
         description: "Create and share link lists, quick and easy",
       },
       {
+        id: "bla.bla",
         title: {
           text: "Excuse generator",
           url:
@@ -50,6 +55,7 @@ export const getSideProjects = async (): Promise<Response> => {
         code: "https://github.com/SantiMA10/excuse-generator",
       },
       {
+        id: "pebble",
         title: {
           text: "YouWatch",
         },
