@@ -1,0 +1,14 @@
+* {
+  font-family: "Source Code Pro", monospace;
+}
+
+a {
+  @apply text-blue-500 no-underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: white;
+    background: black;
+  }
+}

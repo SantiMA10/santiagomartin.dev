@@ -1,7 +1,0 @@
-* {
-  font-family: 'Source Code Pro', monospace;
-}
-
-a {
-  @apply text-blue-500 no-underline;
-}
