@@ -27,7 +27,7 @@ export default function Now() {
             asturias.js{" "}
           </a>{" "}
           and formerly{" "}
-          <a target="_blank" href="https://www.meetup.com/es-ES/GDGAsturias/">
+          <a target="_blank" href="https://www.meetup.com/es-ES/GDG-Asturias/">
             GDG Asturias 😢{" "}
           </a>{" "}
           as well.
