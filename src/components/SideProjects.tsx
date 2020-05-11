@@ -11,7 +11,11 @@ export function SideProjects({ projects }: Props) {
       <ul className="list-reset">
         {projects.map(({ id, description, code, title }) => (
           <li key={id} className="sm:ml-5 mb-2">
-            👨🏻‍💻 <a href={title.url}>{title.text}</a> - {description}
+            👨🏻‍💻{" "}
+            <a href={title.url} target="_blank">
+              {title.text}
+            </a>{" "}
+            - {description}
             {code && (
               <span>
                 {" "}
