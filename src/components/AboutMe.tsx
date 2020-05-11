@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface Props {
   live: boolean;
 }
@@ -22,19 +24,8 @@ export function AboutMe({ live }: Props) {
       <p className="mb-2">
         I'm a software engineer who lives in Gijón, Asturias.
       </p>
-      <p className="mb-2">
-        Currently I work for a startup called{" "}
-        <a target="_blank" href="https://privacycloud.com">
-          PrivacyCloud
-        </a>
-        , co-organize{" "}
-        <a target="_blank" href="https://www.meetup.com/es-ES/GDG-Asturias">
-          GDG Asturias{" "}
-        </a>
-        and I have fun coding some <a href="#sideprojects">side projects</a>.
-      </p>
-      <p className="mb-2">
-        I also play basketball 🏀 with some friends on every time I can.
+      <p>
+        What to know what am I doing now? Visit <Link href="/now">/now</Link>
       </p>
     </section>
   );

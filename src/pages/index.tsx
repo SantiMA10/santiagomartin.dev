@@ -16,7 +16,7 @@ export default function Home({ posts, projects, live, talks }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex items-center flex-col">
+      <main className="flex items-center flex-col flex-grow">
         <AboutMe live={live} />
         <BlogPosts posts={posts} />
         <Talks talks={talks} />
