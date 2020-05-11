@@ -1,23 +1,15 @@
-# santiagomartin.dev [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=SantiMA10/santiagomartin.dev)](https://dependabot.com) <a href="https://firebase.google.com"><img height="22" src="https://user-images.githubusercontent.com/7255298/66274279-29b82200-e87d-11e9-9218-3cd43927ee7e.png"></a>
-
+# santiagomartin.dev
 
 > My personal website
 
-## Build Setup
+## Getting Started
 
-``` bash
-# install dependencies
-$ yarn install
+First, run the development server:
 
-# serve with hot reload at localhost:3000
-$ yarn run dev
-
-# build for production and launch server
-$ yarn run build
-$ yarn start
-
-# generate static project
-$ yarn run generate
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
