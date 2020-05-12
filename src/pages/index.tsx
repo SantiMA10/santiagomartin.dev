@@ -21,7 +21,7 @@ export default function Home({ posts, projects, live, talks }) {
         <AboutMe live={live} />
         <BlogPosts posts={posts} />
         <Talks talks={talks} />
-        <SideProjects projects={projects} />
+        <SideProjects projects={projects} limit={4} />
       </main>
     </Layout>
   );
