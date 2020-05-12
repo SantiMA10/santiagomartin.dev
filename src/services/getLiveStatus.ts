@@ -3,7 +3,7 @@ export const getLiveState = async (): Promise<{ live: boolean }> => {
     "https://api.twitch.tv/kraken/streams/30664176",
     {
       headers: {
-        "Client-ID": process.env.TWITCH_CLIENT_ID,
+        "Client-ID": process.env.NEXT_PUBLIC_TWITCH_CLIENT_ID,
         accept: "application/vnd.twitchtv.v5+json",
       },
     }

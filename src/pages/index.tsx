@@ -9,8 +9,21 @@ import { Community } from "../components/Community";
 import { getTalks } from "../services/getTalks";
 import { Layout } from "../components/Layout";
 import { getEvents } from "../services/getEvents";
+import { useState, useEffect } from "react";
 
-export default function Home({ posts, projects, live, talks, events }) {
+export default function Home({ posts, projects, talks, events }) {
+  const [live, setLive] = useState(false);
+
+  useEffect(() => {
+    const getLive = async () => {
+      const { live } = await getLiveState();
+
+      setLive(live);
+    };
+
+    getLive();
+  }, []);
+
   return (
     <Layout>
       <Head>
