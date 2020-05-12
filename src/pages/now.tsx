@@ -16,7 +16,7 @@ export default function Now() {
         <a target="_blank" href="https://privacycloud.com">
           PrivacyCloud
         </a>{" "}
-        as Software Engineer
+        as Software Engineer.
       </p>
       <p className="mb-2">
         🗓 In the community side, I co-organize{" "}
