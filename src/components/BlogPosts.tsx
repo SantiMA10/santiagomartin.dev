@@ -17,6 +17,12 @@ export function BlogPosts({ posts }: Props) {
             </a>
           </li>
         ))}
+
+        <li className="sm:ml-5 mb-2">
+          <a href="https://medium.com/@santi" target="_blank" className="mb-2">
+            More...
+          </a>
+        </li>
       </ul>
     </section>
   );

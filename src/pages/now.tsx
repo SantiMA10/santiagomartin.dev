@@ -45,7 +45,7 @@ export default function Now() {
       </p>
       <p className="mb-2">
         😂 I have fun coding some{" "}
-        <Link href="/">
+        <Link href="/side-projects">
           <a>side projects</a>
         </Link>{" "}
         doing live streaming on{" "}

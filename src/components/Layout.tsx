@@ -13,7 +13,7 @@ export function Layout({ children, showGoBack }: Props) {
         {children}
         {showGoBack && (
           <Link href="/">
-            <a className="mb-2">← Go back</a>
+            <a className="mb-2">← Go back home</a>
           </Link>
         )}
       </div>

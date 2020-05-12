@@ -20,7 +20,7 @@ export default function Home({ posts, projects, live, talks }) {
       <main className="flex flex-col flex-grow">
         <AboutMe live={live} />
         <BlogPosts posts={posts} />
-        <Talks talks={talks} />
+        <Talks talks={talks} limit={4} />
         <SideProjects projects={projects} limit={4} />
       </main>
     </Layout>
@@ -39,6 +39,6 @@ export async function getStaticProps() {
       projects,
       live,
       talks,
-    }, // will be passed to the page component as props
+    },
   };
 }
