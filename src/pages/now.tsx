@@ -48,7 +48,10 @@ export default function Now() {
         <Link href="/">
           <a>side projects</a>
         </Link>{" "}
-        doing live streaming on <a href="https://twitch.tv/santima10">Twitch</a>
+        doing live streaming on{" "}
+        <a href="https://twitch.tv/santima10" target="_blank">
+          Twitch
+        </a>
         .
       </p>
       <p className="mb-2">
