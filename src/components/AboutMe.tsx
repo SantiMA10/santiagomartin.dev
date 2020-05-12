@@ -28,7 +28,10 @@ export function AboutMe({ live }: Props) {
         I'm a software engineer who lives in Gijón, Asturias.
       </p>
       <p>
-        What to know what am I doing now? Visit <Link href="/now">/now</Link>
+        What to know what am I doing now? Visit{" "}
+        <Link href="/now">
+          <a>/now</a>
+        </Link>
       </p>
     </section>
   );
