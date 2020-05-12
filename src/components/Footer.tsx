@@ -8,7 +8,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export function Footer() {
   return (
-    <footer className="mb-4">
+    <footer className="mt-6 mb-4">
       <div className="flex align-center justify-center">
         <a
           className="flex justify-center items-center"
