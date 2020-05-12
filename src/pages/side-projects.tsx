@@ -13,7 +13,7 @@ export default function SideProjectsPage({ projects }: Props) {
   return (
     <Layout showGoBack={true}>
       <Head>
-        <title>Santiago Martín Agra | Software Engineer</title>
+        <title>Side Projects | Santiago Martín Agra</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

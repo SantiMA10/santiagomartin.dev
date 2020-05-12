@@ -6,7 +6,7 @@ export default function Now() {
   return (
     <Layout showGoBack={true}>
       <Head>
-        <title>Santiago Martín Agra | Software Engineer</title>
+        <title>Now | Santiago Martín Agra</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
