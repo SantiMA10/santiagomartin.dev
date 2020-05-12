@@ -17,7 +17,7 @@ export default function SideProjectsPage({ talks, events }: Props) {
   return (
     <Layout showGoBack={true}>
       <Head>
-        <title>Talks | Santiago Martín Agra</title>
+        <title>Community | Santiago Martín Agra</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
