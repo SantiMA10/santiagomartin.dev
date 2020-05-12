@@ -7,22 +7,23 @@ import { SideProjects } from "../components/SideProjects";
 import { getLiveState } from "../services/getLiveStatus";
 import { Talks } from "../components/Talks";
 import { getTalks } from "../services/getTalks";
+import { Layout } from "../components/Layout";
 
 export default function Home({ posts, projects, live, talks }) {
   return (
-    <div>
+    <Layout>
       <Head>
         <title>Santiago Martín Agra | Software Engineer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex items-center flex-col flex-grow">
+      <main className="flex flex-col flex-grow">
         <AboutMe live={live} />
         <BlogPosts posts={posts} />
         <Talks talks={talks} />
         <SideProjects projects={projects} />
       </main>
-    </div>
+    </Layout>
   );
 }
 

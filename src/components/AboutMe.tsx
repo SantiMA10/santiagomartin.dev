@@ -6,7 +6,7 @@ interface Props {
 
 export function AboutMe({ live }: Props) {
   return (
-    <section id="aboutme" className="w-3/4 mt-10">
+    <section id="aboutme" className="mt-10">
       <h1 className="mb-4">
         Hi 👋🏻, I'm Santi
         {live && (

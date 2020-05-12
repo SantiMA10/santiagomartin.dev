@@ -7,7 +7,7 @@ interface Props {
 
 export function Talks({ talks }: Props) {
   return (
-    <section id="talks" className="w-3/4 mt-5">
+    <section id="talks" className="mt-5">
       <h1 className="mb-4 font-bold">Talks</h1>
       <ul className="list-reset">
         {talks.map(({ id, time, event, talk }) => (

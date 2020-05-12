@@ -6,7 +6,7 @@ interface Props {
 
 export function BlogPosts({ posts }: Props) {
   return (
-    <section id="blog-posts" className="w-3/4 mt-5">
+    <section id="blog-posts" className="mt-5">
       <h1 className="mb-4 font-bold">My blog posts</h1>
       <ul className="list-reset">
         {posts.map(({ key, url, time, title }) => (

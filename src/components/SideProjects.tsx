@@ -6,7 +6,7 @@ interface Props {
 
 export function SideProjects({ projects }: Props) {
   return (
-    <section id="sideprojects" className="w-3/4 mt-5">
+    <section id="sideprojects" className="mt-5">
       <h1 className="mb-4 font-bold">Side projects</h1>
       <ul className="list-reset">
         {projects.map(({ id, description, code, title }) => (
