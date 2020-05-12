@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Typist from "react-typist";
 
 interface Props {
   live: boolean;
@@ -8,18 +9,20 @@ export function AboutMe({ live }: Props) {
   return (
     <section id="aboutme" className="mt-10">
       <h1 className="mb-4">
-        Hi 👋🏻, I'm Santi
-        {live && (
-          <span v-if="live">
-            {" "}
-            and you can watch me live on{" "}
-            <a href="https://twitch.tv/santima10" target="_blank">
-              Twitch{" "}
-            </a>
-            now <div className="circle red inline-block" />
-          </span>
-        )}
-        .
+        <Typist className="social">
+          Hi 👋🏻, I'm Santi
+          {live && (
+            <span v-if="live">
+              {" "}
+              and you can watch me live on{" "}
+              <a href="https://twitch.tv/santima10" target="_blank">
+                Twitch{" "}
+              </a>
+              now <div className="circle red inline-block" />
+            </span>
+          )}
+          .
+        </Typist>
       </h1>
       <p className="mb-2">
         I'm a software engineer who lives in Gijón, Asturias.

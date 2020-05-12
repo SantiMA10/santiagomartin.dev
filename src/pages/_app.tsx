@@ -1,5 +1,6 @@
 import "../css/tailwind.css";
 import "../css/global.css";
+import "../../node_modules/react-typist/dist/Typist.css";
 import { Footer } from "../components/Footer";
 
 export function MyApp({ Component, pageProps }) {
