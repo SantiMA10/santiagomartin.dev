@@ -1,6 +1,6 @@
 export interface Talk {
   id: string | number;
-  time: string;
+  time: number;
   event: {
     name: string;
     url?: string;

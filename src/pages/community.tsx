@@ -4,13 +4,16 @@ import { SideProjects } from "../components/SideProjects";
 import { SideProject } from "../entities/SideProject";
 import { getTalks } from "../services/getTalks";
 import { Talk } from "../entities/Talk";
-import { Talks } from "../components/Talks";
+import { Community } from "../components/Community";
+import { getEvents } from "../services/getEvents";
+import { Event } from "../entities/Event";
 
 interface Props {
   talks: Talk[];
+  events: Event[];
 }
 
-export default function SideProjectsPage({ talks }: Props) {
+export default function SideProjectsPage({ talks, events }: Props) {
   return (
     <Layout showGoBack={true}>
       <Head>
@@ -18,17 +21,19 @@ export default function SideProjectsPage({ talks }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Talks talks={talks} />
+      <Community talks={talks} events={events} />
     </Layout>
   );
 }
 
 export async function getStaticProps() {
   const { talks } = await getTalks();
+  const { events } = await getEvents();
 
   return {
     props: {
       talks,
+      events,
     },
   };
 }

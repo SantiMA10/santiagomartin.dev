@@ -1,12 +1,11 @@
 import { Talk } from "../entities/Talk";
-import { DateTime } from "luxon";
 
 export const getTalks = async (): Promise<{ talks: Talk[] }> => {
   return {
     talks: [
       {
         id: 1563231600000,
-        time: DateTime.fromMillis(1563231600000).toFormat("MMM yyyy"),
+        time: 1563231600000,
         event: {
           name: "TLP Innova",
           url: "https://tlp-tenerife.com/tlpinnova/",
@@ -18,7 +17,7 @@ export const getTalks = async (): Promise<{ talks: Talk[] }> => {
       },
       {
         id: 1544781600000,
-        time: DateTime.fromMillis(1544781600000).toFormat("MMM yyyy"),
+        time: 1544781600000,
         event: {
           name: "Internal training",
         },
@@ -30,7 +29,7 @@ export const getTalks = async (): Promise<{ talks: Talk[] }> => {
       },
       {
         id: 1533826800000,
-        time: DateTime.fromMillis(1533826800000).toFormat("MMM yyyy"),
+        time: 1533826800000,
         event: {
           name: "Build Actions for Your Community",
           url: "https://www.meetup.com/GDG-Asturias/events/248395884/",
@@ -43,7 +42,7 @@ export const getTalks = async (): Promise<{ talks: Talk[] }> => {
       },
       {
         id: 1525791600000,
-        time: DateTime.fromMillis(1525791600000).toFormat("MMM yyyy"),
+        time: 1525791600000,
         event: {
           name: "Google I/O Extended 2018",
           url: "https://www.meetup.com/GDG-Asturias/events/249222664/",

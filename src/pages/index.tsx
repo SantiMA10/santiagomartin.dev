@@ -5,11 +5,12 @@ import { AboutMe } from "../components/AboutMe";
 import { getSideProjects } from "../services/getSideProjects";
 import { SideProjects } from "../components/SideProjects";
 import { getLiveState } from "../services/getLiveStatus";
-import { Talks } from "../components/Talks";
+import { Community } from "../components/Community";
 import { getTalks } from "../services/getTalks";
 import { Layout } from "../components/Layout";
+import { getEvents } from "../services/getEvents";
 
-export default function Home({ posts, projects, live, talks }) {
+export default function Home({ posts, projects, live, talks, events }) {
   return (
     <Layout>
       <Head>
@@ -20,7 +21,7 @@ export default function Home({ posts, projects, live, talks }) {
       <main className="flex flex-col flex-grow">
         <AboutMe live={live} />
         <BlogPosts posts={posts} />
-        <Talks talks={talks} limit={4} />
+        <Community talks={talks} events={events} limit={4} />
         <SideProjects projects={projects} limit={4} />
       </main>
     </Layout>
@@ -32,6 +33,7 @@ export async function getStaticProps() {
   const { projects } = await getSideProjects();
   const { live } = await getLiveState();
   const { talks } = await getTalks();
+  const { events } = await getEvents();
 
   return {
     props: {
@@ -39,6 +41,7 @@ export async function getStaticProps() {
       projects,
       live,
       talks,
+      events,
     },
   };
 }
