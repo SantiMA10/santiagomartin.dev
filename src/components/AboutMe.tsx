@@ -32,6 +32,7 @@ export function AboutMe({ live }: Props) {
         <Link href="/now">
           <a>/now</a>
         </Link>
+        .
       </p>
     </section>
   );

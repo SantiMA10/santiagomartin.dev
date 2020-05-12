@@ -4,8 +4,7 @@ import { DateTime } from "luxon";
 export function Talk({ talk: { time, event, talk } }: { talk: TalkEntity }) {
   return (
     <>
-      🗣
-      {DateTime.fromMillis(time).toFormat("MMM yyyy")} -{" "}
+      🗣 {DateTime.fromMillis(time).toFormat("MMM yyyy")} -{" "}
       {event.url ? (
         <a href={event.url} target="_blank">
           {event.name}
