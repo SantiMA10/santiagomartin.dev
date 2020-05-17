@@ -13,7 +13,7 @@ export function Footer() {
         <a
           className="flex justify-center items-center"
           target="_blank"
-          href="https://twitter.com/SantiMA10"
+          href="/twitter"
         >
           <FontAwesomeIcon
             icon={faTwitter}
@@ -25,7 +25,7 @@ export function Footer() {
         <a
           className="flex justify-center items-center"
           target="_blank"
-          href="https://github.com/SantiMA10"
+          href="/github"
         >
           <FontAwesomeIcon
             icon={faGithub}
@@ -39,7 +39,7 @@ export function Footer() {
         <a
           className="flex justify-center items-center"
           target="_blank"
-          href="https://twitch.tv/SantiMA10"
+          href="/twitch"
         >
           <FontAwesomeIcon
             icon={faTwitch}

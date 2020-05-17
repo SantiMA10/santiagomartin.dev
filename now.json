@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/twitter",
+      "destination": "https://twitter.com/SantiMA10",
+      "permanent": false
+    },
+    {
+      "source": "/twitch",
+      "destination": "https://twitch.tv/SantiMA10",
+      "permanent": false
+    },
+    {
+      "source": "/blog",
+      "destination": "https://medium.com/@Santi",
+      "permanent": false
+    },
+    {
+      "source": "/github",
+      "destination": "https://github.com/SantiMA10",
+      "permanent": false
+    }
+  ]
+}

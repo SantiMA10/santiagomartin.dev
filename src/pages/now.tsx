@@ -34,7 +34,7 @@ export default function Now() {
       </p>
       <p className="mb-2">
         📝 I share my knowledge by writing in{" "}
-        <a href="https://medium.com/@Santi" target="_blank">
+        <a href="/blog" target="_blank">
           my blog
         </a>{" "}
         and in the{" "}
@@ -49,7 +49,7 @@ export default function Now() {
           <a>side projects</a>
         </Link>{" "}
         doing live streaming on{" "}
-        <a href="https://twitch.tv/santima10" target="_blank">
+        <a href="/twitch" target="_blank">
           Twitch
         </a>
         .
