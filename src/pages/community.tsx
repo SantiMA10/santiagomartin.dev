@@ -1,12 +1,10 @@
 import Head from "next/head";
-import { Layout } from "../components/Layout";
-import { SideProjects } from "../components/SideProjects";
-import { SideProject } from "../entities/SideProject";
-import { getTalks } from "../services/getTalks";
-import { Talk } from "../entities/Talk";
 import { Community } from "../components/Community";
-import { getEvents } from "../services/getEvents";
+import { Layout } from "../components/Layout";
 import { Event } from "../entities/Event";
+import { Talk } from "../entities/Talk";
+import { StaticEventRepository } from "../repositories/StaticEventRepository";
+import { StaticTalkRepository } from "../repositories/StaticTalkRepository";
 
 interface Props {
   talks: Talk[];
@@ -27,8 +25,8 @@ export default function SideProjectsPage({ talks, events }: Props) {
 }
 
 export async function getStaticProps() {
-  const { talks } = await getTalks();
-  const { events } = await getEvents();
+  const talks = await new StaticTalkRepository().getAll();
+  const events = await new StaticEventRepository().getAll();
 
   return {
     props: {

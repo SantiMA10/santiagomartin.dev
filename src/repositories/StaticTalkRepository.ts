@@ -1,8 +1,9 @@
+import { Repository } from "./Repository";
 import { Talk } from "../entities/Talk";
 
-export const getTalks = async (): Promise<{ talks: Talk[] }> => {
-  return {
-    talks: [
+export class StaticTalkRepository implements Repository<Talk> {
+  public async getAll(): Promise<Talk[]> {
+    return [
       {
         id: 1563231600000,
         time: 1563231600000,
@@ -53,6 +54,6 @@ export const getTalks = async (): Promise<{ talks: Talk[] }> => {
             "https://docs.google.com/presentation/d/1oaN5EAumVNJ8BrJjdg5Dxt3KOM3UWH7G7uwv1nZb5qg/edit?usp=sharing",
         },
       },
-    ],
-  };
-};
+    ];
+  }
+}
