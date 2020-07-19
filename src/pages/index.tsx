@@ -7,7 +7,7 @@ import { Layout } from "../components/Layout";
 import { SideProjects } from "../components/SideProjects";
 import { StaticEventRepository } from "../repositories/StaticEventRepository";
 import { StaticTalkRepository } from "../repositories/StaticTalkRepository";
-import { getLiveState } from "../services/getLiveStatus";
+import { GetLiveStatus } from "../useCases/GetLiveStatus";
 import { GetPosts } from "../useCases/GetPosts";
 import { GetSideProjects } from "../useCases/GetSideProjects";
 
@@ -16,7 +16,9 @@ export default function Home({ posts, projects, talks, events }) {
 
   useEffect(() => {
     const getLive = async () => {
-      const { live } = await getLiveState();
+      const {
+        data: { live },
+      } = await new GetLiveStatus().perform();
 
       setLive(live);
     };
@@ -44,7 +46,6 @@ export default function Home({ posts, projects, talks, events }) {
 export async function getStaticProps() {
   const { data: posts } = await new GetPosts().perform();
   const { data: projects } = await new GetSideProjects().perform();
-  const { live } = await getLiveState();
   const talks = await new StaticTalkRepository().getAll();
   const events = await new StaticEventRepository().getAll();
 
@@ -52,7 +53,6 @@ export async function getStaticProps() {
     props: {
       posts,
       projects,
-      live,
       talks,
       events,
     },
