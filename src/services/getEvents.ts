@@ -4,6 +4,24 @@ export const getEvents = async (): Promise<{ events: Event[] }> => {
   return {
     events: [
       {
+        id: 1592326800000,
+        time: 1592326800000,
+        event: {
+          name: "Introducción a Verdaccio",
+          url:
+            "https://www.meetup.com/es-ES/asturias-javascript/events/271056488/",
+        },
+      },
+      {
+        id: 1591722000000,
+        time: 1591722000000,
+        event: {
+          name: "Presentación de asturias.js",
+          url:
+            "https://www.meetup.com/es-ES/asturias-javascript/events/270972747/",
+        },
+      },
+      {
         id: 1569823200000,
         time: 1569823200000,
         event: {
