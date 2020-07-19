@@ -1,8 +1,9 @@
 import { Event } from "../entities/Event";
+import { Repository } from "./Repository";
 
-export const getEvents = async (): Promise<{ events: Event[] }> => {
-  return {
-    events: [
+export class StaticEventRepository implements Repository<Event> {
+  public async getAll(): Promise<Event[]> {
+    return [
       {
         id: 1592326800000,
         time: 1592326800000,
@@ -85,6 +86,6 @@ export const getEvents = async (): Promise<{ events: Event[] }> => {
           url: "https://www.meetup.com/GDG-Asturias/events/246868757/",
         },
       },
-    ],
-  };
-};
+    ];
+  }
+}
