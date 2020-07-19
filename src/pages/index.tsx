@@ -9,7 +9,7 @@ import { StaticEventRepository } from "../repositories/StaticEventRepository";
 import { StaticTalkRepository } from "../repositories/StaticTalkRepository";
 import { getLiveState } from "../services/getLiveStatus";
 import { getPostFromMedium } from "../services/getPostFromMedium";
-import { getSideProjects } from "../services/getSideProjects";
+import { GetSideProjects } from "../useCases/GetSideProjects";
 
 export default function Home({ posts, projects, talks, events }) {
   const [live, setLive] = useState(false);
@@ -43,7 +43,7 @@ export default function Home({ posts, projects, talks, events }) {
 
 export async function getStaticProps() {
   const { posts } = await getPostFromMedium();
-  const { projects } = await getSideProjects();
+  const { data: projects } = await new GetSideProjects().perform();
   const { live } = await getLiveState();
   const talks = await new StaticTalkRepository().getAll();
   const events = await new StaticEventRepository().getAll();

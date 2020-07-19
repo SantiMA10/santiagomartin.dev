@@ -1,9 +1,8 @@
-import Link from "next/link";
 import Head from "next/head";
 import { Layout } from "../components/Layout";
 import { SideProjects } from "../components/SideProjects";
-import { getSideProjects } from "../services/getSideProjects";
 import { SideProject } from "../entities/SideProject";
+import { GetSideProjects } from "../useCases/GetSideProjects";
 
 interface Props {
   projects: SideProject[];
@@ -23,7 +22,7 @@ export default function SideProjectsPage({ projects }: Props) {
 }
 
 export async function getStaticProps() {
-  const { projects } = await getSideProjects();
+  const { data: projects } = await new GetSideProjects().perform();
 
   return {
     props: {
