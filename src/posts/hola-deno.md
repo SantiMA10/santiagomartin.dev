@@ -72,3 +72,74 @@ deno run --allow-net server.ts
 ```
 
 Ahora ya podemos visitar https://localhost:8080 y ver como deno nos devuelve “Hello world”.
+
+# Bonus track: Deplegando deno en Google Cloud Run 🚀
+
+Es el último paso para acabar de probar una tecnología ponerla en producción.
+
+En este caso vamos a utilizar Google Cloud Run ya que nos permite desplegar contenedores de docker sin preocuparnos por la infraestructura.
+
+## Dockerfile
+
+```dockerfile
+FROM debian
+
+RUN apt-get update
+RUN apt-get upgrade
+RUN apt-get install curl unzip -y
+
+RUN curl -fsSL https://deno.land/x/install/install.sh | sh
+ENV DENO_INSTALL="/root/.deno"
+ENV PATH="$DENO_INSTALL/bin:$PATH"
+ENV PORT="1234"
+
+WORKDIR /usr/src/app
+COPY . .
+
+CMD ["deno", "run", "--allow-env", "--allow-net", "server.ts"]
+```
+
+## El fichero server.ts
+
+Necesitamos hacer un pequeño cambio, para poder utilizar el puerto que Cloud Run nos asigne en la variable de entorno PORT, en lugar de usar siempre el 8080.
+
+```typescript
+import { serve } from "https://deno.land/std/http/server.ts";
+
+const PORT = parseInt(Deno.env.get("PORT") || "", 10) || 8080;
+
+const s = serve(`0.0.0.0:${PORT}`);
+console.log(`Listen on: ${PORT}`);
+
+for await (const req of s) {
+  req.respond({ body: "Hello World\n" });
+}
+```
+
+## Generando la imagen y deplegando a Google Cloud Run
+
+Los requisitos para poder hacerlo son simples:
+
+- un proyecto en Google Cloud, con las APIs de Cloud Run y Cloud Build activadas.
+- tener instalada y configurada la cli de Google Cloud, gcloud.
+- Toda la información de como hacer este paso la podeis encontrar en la documentación de Cloud Run, pero yo os lo resumo.
+
+https://cloud.run
+
+### Enviamos la imagen a Cloud Build para que Google la genere
+
+```sh
+gcloud builds submit --tag gcr.io/PROJECT-ID/helloworld
+```
+
+### Desplegamos la imagen en Cloud Run
+
+```sh
+gcloud run deploy --image gcr.io/PROJECT-ID/helloworld --platform managed
+```
+
+## Mi repo de ejemplo
+
+https://github.com/SantiMA10/deno-example
+
+Estos días le estamos dando caña a deno en mi canal de Twitch, por lo que te invito a pasarte si te quedas con ganas de charla sobre deno.
