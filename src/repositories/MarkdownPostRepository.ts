@@ -14,7 +14,12 @@ export class MarkdownPostRepository implements Repository<PostEntity> {
       })
     );
 
-    return posts;
+    return posts.sort((a, b) =>
+      DateTime.fromFormat(a.time, "MMM yyyy").startOf("day") <=
+      DateTime.fromFormat(b.time, "MMM yyyy").startOf("day")
+        ? 1
+        : -1
+    );
   }
 
   public async getBySlug(slug: string): Promise<PostEntity> {
