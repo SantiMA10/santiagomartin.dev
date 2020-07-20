@@ -21,7 +21,10 @@ export default function BlogPost({ post }: Props) {
         <title>{post?.title} | santiagomartin.dev</title>
         <meta name="description" content={post?.spoiler}></meta>
         <meta name="og:description" content={post?.spoiler}></meta>
-        <meta name="og:title" content={post?.title}></meta>
+        <meta
+          name="og:title"
+          content={`${post?.title} | santiagomartin.dev`}
+        ></meta>
       </Head>
       <Layout showGoBack>
         <Heading level={1}>{post?.title}</Heading>
