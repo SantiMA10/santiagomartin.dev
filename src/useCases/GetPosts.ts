@@ -1,7 +1,7 @@
+import { Features } from "../config/Features";
 import { PostEntity } from "../entities/Post";
 import { MediumPostRepository } from "../repositories/MediumPostRepository";
 import { Repository } from "../repositories/Repository";
-import { Features } from "../config/Features";
 import { MarkdownPostRepository } from "../repositories/MarkdownPostRepository";
 
 export class GetPosts {

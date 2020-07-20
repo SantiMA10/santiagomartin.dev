@@ -7,10 +7,11 @@ export default async function sitemap(
   res: NextApiResponse
 ) {
   const posts = await new MarkdownPostRepository().getAll();
+  console.log(posts);
   const postsSitemap = posts.map((post) => {
     return `<url>
-    <loc>https://santiagomartin.dev${post.url}</loc>
-    <lastmod>${post.time}</lastmod>
+    <loc>https://santiagomartin.dev${post?.url}</loc>
+    <lastmod>${post?.time}</lastmod>
     <priority>0.50</priority>
   </url>`;
   });
