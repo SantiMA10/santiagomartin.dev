@@ -8,8 +8,8 @@ export const isDevEnv = () => {
 
 export const isProdEnv = () => {
   return (
-    (process.env.NEXT_PUBLIC_NODE_ENV === "production" &&
-      process.env.NEXT_PUBLIC_COMMIT_REF?.includes("master")) ||
-    location.href.includes("https://santiagomartin.dev")
+    process.env.NEXT_PUBLIC_NODE_ENV === "production" ||
+    process.env.NEXT_PUBLIC_COMMIT_REF?.includes("master") ||
+    location?.href?.includes("https://santiagomartin.dev")
   );
 };
