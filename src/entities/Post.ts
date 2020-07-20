@@ -4,4 +4,7 @@ export interface PostEntity {
   title: string;
   url: string;
   key: string;
+  body?: string;
+  spoiler?: string;
+  tags?: string[];
 }
