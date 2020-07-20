@@ -19,6 +19,7 @@ export class MarkdownPostRepository implements Repository<PostEntity> {
 
   public async getBySlug(slug: string): Promise<PostEntity> {
     const file = await fs.readFile(`${process.cwd()}/src/posts/${slug}.md`);
+
     const {
       content,
       data: { title, date, spoiler, tags },
