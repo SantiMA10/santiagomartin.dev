@@ -31,7 +31,7 @@ export default function BlogPost({ post }: Props) {
         <span>Published at: {post?.time}</span>
         <div className="flex flex-wrap mb-4">
           {post?.tags.map((tag) => (
-            <span className="p-1 bg-blue-900 mr-2 rounded mt-2">
+            <span className="p-1 bg-blue-100 dark:bg-blue-900 mr-2 rounded mt-2">
               #{tag.replace(/ /g, "")}
             </span>
           ))}
