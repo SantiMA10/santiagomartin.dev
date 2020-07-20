@@ -10,6 +10,7 @@ import { Layout } from "../../components/Layout";
 import { PostEntity } from "../../entities/Post";
 import { MarkdownPostRepository } from "../../repositories/MarkdownPostRepository";
 import Quote from "../../components/blog/Quote";
+import Link from "../../components/blog/Link";
 
 interface Props {
   post: PostEntity;
@@ -69,6 +70,7 @@ export default function BlogPost({ post }: Props) {
             paragraph: Paragraph,
             listItem: ListItem,
             blockquote: Quote,
+            link: Link,
           }}
         />
       </Layout>
