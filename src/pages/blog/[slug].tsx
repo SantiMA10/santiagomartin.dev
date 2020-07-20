@@ -17,6 +17,7 @@ interface Props {
 export default function BlogPost({ post }: Props) {
   const title = `${post?.title} | santiagomartin.dev`;
   const description = post?.spoiler;
+  const url = `https://santiagomartin.dev${post?.url}`;
 
   return (
     <>
@@ -31,7 +32,21 @@ export default function BlogPost({ post }: Props) {
         <meta name="twitter:card" content="summary"></meta>
         <meta name="twitter:site" content="@SantiMA10"></meta>
         <meta name="twitter:creator" content="@SantiMA10"></meta>
-        <link rel="canonical" href={`https://santiagomartin.dev${post?.url}`} />
+        <link rel="canonical" href={url} />
+        <script type="application/ld+json">{`
+    {
+      "@context":"https://schema.org/",
+      "@type":"Article",
+      "name":"${title}",
+      "author": { "@type": "Person", "@id": "SantiMA10", "name": "Santi M.A." },
+      "datePublished": "${post?.time}",
+      "dateModified": "${post?.time}",
+      "description": "${post?.spoiler}",
+      "headline": "${title}",
+      "inLanguage": "Spanish",
+      "url": "${url}"
+    }
+    `}</script>
       </Head>
       <Layout showGoBack>
         <Heading level={1}>{post?.title}</Heading>
