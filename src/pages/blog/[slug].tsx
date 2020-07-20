@@ -9,6 +9,7 @@ import Paragraph from "../../components/blog/Paragraph";
 import { Layout } from "../../components/Layout";
 import { PostEntity } from "../../entities/Post";
 import { MarkdownPostRepository } from "../../repositories/MarkdownPostRepository";
+import Quote from "../../components/blog/Quote";
 
 interface Props {
   post: PostEntity;
@@ -67,6 +68,7 @@ export default function BlogPost({ post }: Props) {
             image: Image,
             paragraph: Paragraph,
             listItem: ListItem,
+            blockquote: Quote,
           }}
         />
       </Layout>
