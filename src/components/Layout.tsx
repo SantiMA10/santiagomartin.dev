@@ -9,7 +9,7 @@ interface Props {
 export function Layout({ children, showGoBack }: Props) {
   return (
     <div className="flex items-center flex-col flex-grow">
-      <div className="w-3/4 mt-10 flex flex-col">
+      <div className="w-11/12 sm:w-4/5 md:w-3/4 mt-10 flex flex-col">
         {children}
         {showGoBack && (
           <Link href="/">
