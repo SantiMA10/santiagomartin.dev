@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import ReactMarkdown from "react-markdown";
 import CodeBlock from "../../components/blog/CodeBlock";
@@ -7,7 +8,7 @@ import ListItem from "../../components/blog/ListItem";
 import Paragraph from "../../components/blog/Paragraph";
 import { Layout } from "../../components/Layout";
 import { PostEntity } from "../../entities/Post";
-import { GetPosts } from "../../useCases/GetPosts";
+import { MarkdownPostRepository } from "../../repositories/MarkdownPostRepository";
 
 interface Props {
   post: PostEntity;
@@ -17,16 +18,16 @@ export default function BlogPost({ post }: Props) {
   return (
     <>
       <Head>
-        <title>{post.title} | santiagomartin.dev</title>
-        <meta name="description" content={post.spoiler}></meta>
-        <meta name="og:description" content={post.spoiler}></meta>
-        <meta name="og:title" content={post.title}></meta>
+        <title>{post?.title} | santiagomartin.dev</title>
+        <meta name="description" content={post?.spoiler}></meta>
+        <meta name="og:description" content={post?.spoiler}></meta>
+        <meta name="og:title" content={post?.title}></meta>
       </Head>
       <Layout showGoBack>
-        <Heading level={1}>{post.title}</Heading>
-        <span>Published at: {post.time}</span>
+        <Heading level={1}>{post?.title}</Heading>
+        <span>Published at: {post?.time}</span>
         <div className="flex flex-wrap mb-4">
-          {post.tags.map((tag) => (
+          {post?.tags.map((tag) => (
             <span className="p-1 bg-blue-900 mr-2 rounded mt-2">
               #{tag.replace(/ /g, "")}
             </span>
@@ -34,7 +35,7 @@ export default function BlogPost({ post }: Props) {
         </div>
 
         <ReactMarkdown
-          source={post.body}
+          source={post?.body}
           renderers={{
             code: CodeBlock,
             heading: Heading,
@@ -48,19 +49,23 @@ export default function BlogPost({ post }: Props) {
   );
 }
 
-export async function getStaticProps() {
-  const { data: posts } = await new GetPosts().perform();
+export const getStaticProps: GetStaticProps = async (context) => {
+  const post = await new MarkdownPostRepository().getBySlug(
+    context.params.slug.toString()
+  );
 
   return {
     props: {
-      post: posts[0],
+      post,
     },
   };
-}
+};
 
 export async function getStaticPaths() {
+  const posts = await new MarkdownPostRepository().getAll();
+
   return {
-    paths: ["/blog/hello-deno"],
+    paths: posts.map((posts) => posts.url),
     fallback: true,
   };
 }
