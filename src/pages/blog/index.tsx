@@ -19,10 +19,7 @@ export default function BlogIndex({ posts }: Props) {
         <ul className="list-reset">
           {posts.map(({ key, url, time, title }) => (
             <li key={key} className="sm:ml-5 mb-2">
-              📝 {time} -{" "}
-              <a href={url} target="_blank">
-                {title}
-              </a>
+              📝 {time} - <a href={url}>{title}</a>
             </li>
           ))}
         </ul>
