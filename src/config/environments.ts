@@ -9,6 +9,6 @@ export const isDevEnv = () => {
 export const isProdEnv = () => {
   return (
     process.env.NODE_ENV === "production" &&
-    process.env.VERCEL_GITHUB_COMMIT_REF === "master"
+    process.env.VERCEL_GITHUB_COMMIT_REF?.includes("master")
   );
 };
