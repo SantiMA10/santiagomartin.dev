@@ -1,7 +1,8 @@
-import { Layout } from "../../components/Layout";
-import { GetPosts } from "../../useCases/GetPosts";
-import { PostEntity } from "../../entities/Post";
 import Head from "next/head";
+import { BlogPosts } from "../../components/BlogPosts";
+import { Layout } from "../../components/Layout";
+import { PostEntity } from "../../entities/Post";
+import { GetPosts } from "../../useCases/GetPosts";
 
 interface Props {
   posts: PostEntity[];
@@ -14,15 +15,7 @@ export default function BlogIndex({ posts }: Props) {
         <title>Blog | santiagomartin.dev</title>
       </Head>
       <Layout showGoBack>
-        <h1 className="mb-4 font-bold">My blog</h1>
-        <h2 className="mb-4">Here you can find my thoughts about anythings</h2>
-        <ul className="list-reset">
-          {posts.map(({ key, url, time, title }) => (
-            <li key={key} className="sm:ml-5 mb-2">
-              📝 {time} - <a href={url}>{title}</a>
-            </li>
-          ))}
-        </ul>
+        <BlogPosts posts={posts} />
       </Layout>
     </>
   );

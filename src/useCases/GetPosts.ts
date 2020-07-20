@@ -1,17 +1,13 @@
-import { Features } from "../config/Features";
 import { PostEntity } from "../entities/Post";
-import { MediumPostRepository } from "../repositories/MediumPostRepository";
-import { Repository } from "../repositories/Repository";
 import { MarkdownPostRepository } from "../repositories/MarkdownPostRepository";
+import { Repository } from "../repositories/Repository";
 
 export class GetPosts {
   public constructor(
-    private postRepository: Repository<PostEntity> = new MediumPostRepository()
-  ) {
-    if (Features.enableBlog()) {
-      this.postRepository = new MarkdownPostRepository();
-    }
-  }
+    private postRepository: Repository<
+      PostEntity
+    > = new MarkdownPostRepository()
+  ) {}
 
   public async perform(): Promise<{ data: PostEntity[] }> {
     const posts = await this.postRepository.getAll().catch((e) => {

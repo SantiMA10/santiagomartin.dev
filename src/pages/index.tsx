@@ -35,7 +35,7 @@ export default function Home({ posts, projects, talks, events }) {
 
       <main className="flex flex-col flex-grow">
         <AboutMe live={live} />
-        <BlogPosts posts={posts} />
+        <BlogPosts posts={posts} limit={4} />
         <Community talks={talks} events={events} limit={4} />
         <SideProjects projects={projects} limit={4} />
       </main>
