@@ -31,6 +31,7 @@ export default function BlogPost({ post }: Props) {
         <meta name="twitter:card" content="summary"></meta>
         <meta name="twitter:site" content="@SantiMA10"></meta>
         <meta name="twitter:creator" content="@SantiMA10"></meta>
+        <link rel="canonical" href={`https://santiagomartin.dev${post.url}`} />
       </Head>
       <Layout showGoBack>
         <Heading level={1}>{post?.title}</Heading>
