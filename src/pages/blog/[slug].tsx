@@ -26,6 +26,7 @@ export default function BlogPost({ post }: Props) {
         <meta name="og:description" content={description}></meta>
         <meta name="og:title" content={title}></meta>
         <meta name="twitter:title" content={title} />
+        <meta name="twitter:image" content="/favicon.ico" />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:card" content="summary"></meta>
         <meta name="twitter:site" content="@SantiMA10"></meta>
