@@ -2,9 +2,21 @@ interface Props {
   alt: string;
   src: string;
   nodeKey: string;
+  title: string;
 }
 
-export function Image({ alt, src, nodeKey }: Props) {
+export function Image({ alt, src, nodeKey, title }: Props) {
+  if (title) {
+    return (
+      <div className="flex justify-center algin-center flex-col pb-4 pt-4">
+        <div className="flex justify-center algin-center">
+          <img key={nodeKey} alt={alt} src={src} />
+        </div>
+        <p className="text-center pt-2 italic">{title}</p>
+      </div>
+    );
+  }
+
   return (
     <img
       key={nodeKey}
