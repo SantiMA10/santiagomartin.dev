@@ -15,16 +15,21 @@ interface Props {
 }
 
 export default function BlogPost({ post }: Props) {
+  const title = `${post?.title} | santiagomartin.dev`;
+  const description = post?.spoiler;
+
   return (
     <>
       <Head>
-        <title>{post?.title} | santiagomartin.dev</title>
-        <meta name="description" content={post?.spoiler}></meta>
-        <meta name="og:description" content={post?.spoiler}></meta>
-        <meta
-          name="og:title"
-          content={`${post?.title} | santiagomartin.dev`}
-        ></meta>
+        <title>{title}</title>
+        <meta name="description" content={description}></meta>
+        <meta name="og:description" content={description}></meta>
+        <meta name="og:title" content={title}></meta>
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:card" content="summary"></meta>
+        <meta name="twitter:site" content="@SantiMA10"></meta>
+        <meta name="twitter:creator" content="@SantiMA10"></meta>
       </Head>
       <Layout showGoBack>
         <Heading level={1}>{post?.title}</Heading>
