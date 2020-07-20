@@ -30,7 +30,7 @@ PD: Otra diferencia "importate" es el orden de las silabas no-de -> de-no 😜.
 
 Mi opción recomendada y la única que cuando escribo este post descarga la versión 1.0.0-rc1 es utilizar el siguiente comando:
 
-```bash
+```sh
 curl -fsSL https://deno.land/x/install/install.sh | sh
 ```
 
@@ -40,7 +40,7 @@ curl -fsSL https://deno.land/x/install/install.sh | sh
 
 Una vez todo instalado, toca comprobar que funciona, para ello vamos a ejecutar el primer script de deno y que de paso nos permite ver una de las caracteristicas chulas, ¡podemos ejecutar código que este en una URL!
 
-```bash
+```sh
 deno run https://deno.land/std/examples/welcome.ts
 ```
 
@@ -61,13 +61,13 @@ for await (const req of s) {
 
 Lo guardamos en un fichero .ts, por ejemplo lo podemos llamar server.ts, y ejecutamos con deno.
 
-```bash
+```sh
 deno run server.ts
 ```
 
 ¡💥💥💥! Como deno es seguro por defecto, no tenemos acceso a la red, necesitamos darle ese permiso para poder ejecutar el servidor.
 
-```bash
+```sh
 deno run --allow-net server.ts
 ```
 

@@ -3,6 +3,8 @@ import ReactMarkdown from "react-markdown";
 import CodeBlock from "../../components/blog/CodeBlock";
 import Heading from "../../components/blog/Heading";
 import { Image } from "../../components/blog/Image";
+import ListItem from "../../components/blog/ListItem";
+import Paragraph from "../../components/blog/Paragraph";
 import { Layout } from "../../components/Layout";
 import { PostEntity } from "../../entities/Post";
 import { GetPosts } from "../../useCases/GetPosts";
@@ -33,7 +35,13 @@ export default function BlogPost({ post }: Props) {
 
         <ReactMarkdown
           source={post.body}
-          renderers={{ code: CodeBlock, heading: Heading, image: Image }}
+          renderers={{
+            code: CodeBlock,
+            heading: Heading,
+            image: Image,
+            paragraph: Paragraph,
+            listItem: ListItem,
+          }}
         />
       </Layout>
     </>
