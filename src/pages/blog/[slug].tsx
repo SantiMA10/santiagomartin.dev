@@ -35,11 +35,14 @@ export default function BlogPost({ post }: Props) {
         <meta name="twitter:site" content="@SantiMA10"></meta>
         <meta name="twitter:creator" content="@SantiMA10"></meta>
         <link rel="canonical" href={url} />
-        <script type="application/ld+json">{`
-    {
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `{
       "@context":"https://schema.org/",
       "@type":"Article",
       "name":"${title}",
+      "abstract": "${post?.spoiler}",
       "author": { "@type": "Person", "@id": "SantiMA10", "name": "Santi M.A." },
       "datePublished": "${post?.time}",
       "dateModified": "${post?.time}",
@@ -47,8 +50,9 @@ export default function BlogPost({ post }: Props) {
       "headline": "${title}",
       "inLanguage": "Spanish",
       "url": "${url}"
-    }
-    `}</script>
+    }`,
+          }}
+        ></script>
       </Head>
       <Layout showGoBack>
         <Heading level={1}>{post?.title}</Heading>
