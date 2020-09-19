@@ -3,6 +3,7 @@ import {
   faTwitter,
   faGithub,
   faTwitch,
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
@@ -51,13 +52,13 @@ export function Footer() {
         <a
           className="flex justify-center items-center"
           target="_blank"
-          href="mailto:hi@santiagomartin.dev"
+          href="https://www.youtube.com/channel/UCFlKou_4Ow2vco5N4aCJZoA?sub_confirmation=1"
         >
           <FontAwesomeIcon
             className="h-5 text-blue-500 no-underline hover:text-blue-800 hover:underline mr-1"
-            icon={faEnvelope}
+            icon={faYoutube}
           />
-          <span className="hidden md:block">Email</span>
+          <span className="hidden md:block">YouTube</span>
         </a>
       </div>
     </footer>
