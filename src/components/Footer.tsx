@@ -77,7 +77,7 @@ export function Footer() {
         <a
           className="flex justify-center items-center"
           target="_blank"
-          href="https://discord.gg/KtzeRw"
+          href="https://discord.gg/rhRG2bqBfH"
         >
           <FontAwesomeIcon
             className="h-4 md:h-5 text-blue-500 no-underline hover:text-blue-800 hover:underline mr-1"
