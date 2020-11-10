@@ -5,6 +5,15 @@ export class StaticEventRepository implements Repository<Event> {
   public async getAll(): Promise<Event[]> {
     return [
       {
+        id: 1604737800000,
+        time: 1604737800000,
+        event: {
+          name: "Asturias Global Day Of Coderetreat 2020",
+          url:
+            "https://www.eventbrite.es/e/entradas-asturias-global-day-of-coderetreat-2020-123380461281",
+        },
+      },
+      {
         id: 1592326800000,
         time: 1592326800000,
         event: {
