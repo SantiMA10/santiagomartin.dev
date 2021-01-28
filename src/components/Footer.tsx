@@ -1,12 +1,12 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faTwitter,
   faGithub,
+  faLinkedin,
   faTwitch,
+  faTwitter,
   faYoutube,
-  faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export function Footer() {
   return (
@@ -77,13 +77,13 @@ export function Footer() {
         <a
           className="flex justify-center items-center"
           target="_blank"
-          href="https://discord.gg/rhRG2bqBfH"
+          href="https://www.linkedin.com/in/santiago-martin-agra/"
         >
           <FontAwesomeIcon
             className="h-4 md:h-5 text-blue-500 no-underline hover:text-blue-800 hover:underline mr-1"
-            icon={faDiscord}
+            icon={faLinkedin}
           />
-          <span className="hidden md:block">Discord</span>
+          <span className="hidden md:block">LinkedIn</span>
         </a>
       </div>
     </footer>
