@@ -12,7 +12,7 @@ export function Event({
     <>
       🗓 {DateTime.fromMillis(time).toFormat("MMM yyyy")} -{" "}
       {event.url ? (
-        <a href={event.url} target="_blank">
+        <a href={event.url} target="_blank" rel="noreferrer">
           {event.name}
         </a>
       ) : (

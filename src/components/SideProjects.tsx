@@ -18,7 +18,7 @@ export function SideProjects(props: Props): ReactElement {
         {projects.slice(0, limit).map(({ id, description, code, title }) => (
           <li key={id} className="sm:ml-5 mb-2">
             👨🏻‍💻{" "}
-            <a href={title.url} target="_blank">
+            <a href={title.url} target="_blank" rel="noreferrer">
               {title.text}
             </a>{" "}
             - {description}
@@ -26,7 +26,7 @@ export function SideProjects(props: Props): ReactElement {
               <span>
                 {" "}
                 -{" "}
-                <a href={code} target="_blank">
+                <a href={code} target="_blank" rel="noreferrer">
                   GitHub
                 </a>
               </span>

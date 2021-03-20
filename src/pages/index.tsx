@@ -2,7 +2,7 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import { ReactElement, useEffect, useState } from "react";
 
-import { AboutMe } from "../components/AboutMe";
+import { AboutMe } from "../components/AboutMe/AboutMe";
 import { BlogPosts } from "../components/BlogPosts";
 import { Community } from "../components/Community";
 import { Layout } from "../components/Layout";
