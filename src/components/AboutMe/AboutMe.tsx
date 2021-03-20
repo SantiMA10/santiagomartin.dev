@@ -11,12 +11,16 @@ export function AboutMe({ live }: Props): ReactElement {
     <section id="aboutme" className="mt-10">
       <h1 className="mb-4">
         <Typist className="social">
-          Hi 👋🏻, I'm Santi
+          Hi 👋🏻, I&apos;m Santi
           {live && (
             <span v-if="live">
               {" "}
               and you can watch me live on{" "}
-              <a href="https://twitch.tv/santima10" target="_blank">
+              <a
+                href="https://twitch.tv/santima10"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Twitch{" "}
               </a>
               now <div className="circle red inline-block" />
@@ -26,7 +30,7 @@ export function AboutMe({ live }: Props): ReactElement {
         </Typist>
       </h1>
       <p className="mb-2">
-        I'm a software engineer who lives in Gijón, Asturias.
+        I&apos;m a software engineer who lives in Gijón, Asturias.
       </p>
       <p>
         Want to know what am I doing now? Visit{" "}

@@ -41,6 +41,7 @@ export function Footer(): ReactElement {
           className="flex justify-center items-center"
           target="_blank"
           href="mailto:hi@santiagomartin.dev"
+          rel="noreferrer"
         >
           <FontAwesomeIcon
             className="h-4 md:h-5 text-blue-500 no-underline hover:text-blue-800 hover:underline mr-1"
@@ -55,6 +56,7 @@ export function Footer(): ReactElement {
           className="flex justify-center items-center"
           target="_blank"
           href="/twitch"
+          rel="noreferrer"
         >
           <FontAwesomeIcon
             icon={faTwitch}
@@ -67,6 +69,7 @@ export function Footer(): ReactElement {
           className="flex justify-center items-center"
           target="_blank"
           href="https://www.youtube.com/channel/UCFlKou_4Ow2vco5N4aCJZoA?sub_confirmation=1"
+          rel="noreferrer"
         >
           <FontAwesomeIcon
             className="h-4 md:h-5 text-blue-500 no-underline hover:text-blue-800 hover:underline mr-1"
@@ -79,6 +82,7 @@ export function Footer(): ReactElement {
           className="flex justify-center items-center"
           target="_blank"
           href="https://www.linkedin.com/in/santiago-martin-agra/"
+          rel="noreferrer"
         >
           <FontAwesomeIcon
             className="h-4 md:h-5 text-blue-500 no-underline hover:text-blue-800 hover:underline mr-1"

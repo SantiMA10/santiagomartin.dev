@@ -16,7 +16,7 @@ export function Talk(props: Props): ReactElement {
     <>
       🗣 {DateTime.fromMillis(time).toFormat("MMM yyyy")} -{" "}
       {event.url ? (
-        <a href={event.url} target="_blank">
+        <a href={event.url} target="_blank" rel="noreferrer">
           {event.name}
         </a>
       ) : (
@@ -25,7 +25,7 @@ export function Talk(props: Props): ReactElement {
       {talk.url ? (
         <>
           {" - "}
-          <a href={talk.url} target="_blank">
+          <a href={talk.url} target="_blank" rel="noreferrer">
             {talk.name}
           </a>
         </>

@@ -15,7 +15,7 @@ export default function Now(): ReactElement {
       <h1 className="mb-4 font-bold">What I’m doing now</h1>
       <p className="mb-2">
         👨‍💻 I work for a startup called{" "}
-        <a target="_blank" href="https://privacycloud.com">
+        <a target="_blank" href="https://privacycloud.com" rel="noreferrer">
           PrivacyCloud
         </a>{" "}
         as Software Engineer.
@@ -25,11 +25,16 @@ export default function Now(): ReactElement {
         <a
           target="_blank"
           href="https://www.meetup.com/es-ES/asturias-javascript/"
+          rel="noreferrer"
         >
           asturias.js
         </a>{" "}
         and formerly{" "}
-        <a target="_blank" href="https://www.meetup.com/es-ES/GDG-Asturias/">
+        <a
+          target="_blank"
+          href="https://www.meetup.com/es-ES/GDG-Asturias/"
+          rel="noreferrer"
+        >
           GDG Asturias 😢
         </a>{" "}
         as well.
@@ -40,7 +45,7 @@ export default function Now(): ReactElement {
           my blog
         </a>{" "}
         and in the{" "}
-        <a href="https://medium.com/gdgeurope" target="_blank">
+        <a href="https://medium.com/gdgeurope" target="_blank" rel="noreferrer">
           GDG Europe blog
         </a>
         .
