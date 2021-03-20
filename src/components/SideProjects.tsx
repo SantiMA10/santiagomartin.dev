@@ -1,12 +1,16 @@
-import { SideProject } from "../entities/SideProject";
 import Link from "next/link";
+import { ReactElement } from "react";
+
+import { SideProject } from "../entities/SideProject";
 
 interface Props {
   projects: SideProject[];
   limit?: number;
 }
 
-export function SideProjects({ projects, limit }: Props) {
+export function SideProjects(props: Props): ReactElement {
+  const { projects, limit } = props;
+
   return (
     <section id="sideprojects" className="mt-5">
       <h1 className="mb-4 font-bold">Side projects</h1>

@@ -1,17 +1,31 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
+
 import { AboutMe } from "../components/AboutMe";
 import { BlogPosts } from "../components/BlogPosts";
 import { Community } from "../components/Community";
 import { Layout } from "../components/Layout";
 import { SideProjects } from "../components/SideProjects";
+import { Event } from "../entities/Event";
+import { PostEntity } from "../entities/Post";
+import { SideProject } from "../entities/SideProject";
+import { Talk } from "../entities/Talk";
 import { StaticEventRepository } from "../repositories/StaticEventRepository";
 import { StaticTalkRepository } from "../repositories/StaticTalkRepository";
 import { GetLiveStatus } from "../useCases/GetLiveStatus";
 import { GetPosts } from "../useCases/GetPosts";
 import { GetSideProjects } from "../useCases/GetSideProjects";
 
-export default function Home({ posts, projects, talks, events }) {
+interface Props {
+  posts: PostEntity[];
+  projects: SideProject[];
+  talks: Talk[];
+  events: Event[];
+}
+
+export default function Home(props: Props): ReactElement {
+  const { posts, projects, talks, events } = props;
   const [live, setLive] = useState(false);
 
   useEffect(() => {
@@ -43,7 +57,7 @@ export default function Home({ posts, projects, talks, events }) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const { data: posts } = await new GetPosts().perform();
   const { data: projects } = await new GetSideProjects().perform();
   const talks = await new StaticTalkRepository().getAll();
@@ -57,4 +71,4 @@ export async function getStaticProps() {
       events,
     },
   };
-}
+};

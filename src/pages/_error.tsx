@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { ReactElement, useEffect } from "react";
 
-function Error() {
+function Error(): ReactElement {
   useEffect(() => {
     if (window) {
       window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";

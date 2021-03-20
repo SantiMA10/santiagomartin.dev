@@ -1,7 +1,13 @@
-import { Event as EventEntity } from "../entities/Event";
 import { DateTime } from "luxon";
+import { ReactElement } from "react";
 
-export function Event({ event: { time, event } }: { event: EventEntity }) {
+import { Event as EventEntity } from "../entities/Event";
+
+export function Event({
+  event: { time, event },
+}: {
+  event: EventEntity;
+}): ReactElement {
   return (
     <>
       🗓 {DateTime.fromMillis(time).toFormat("MMM yyyy")} -{" "}
