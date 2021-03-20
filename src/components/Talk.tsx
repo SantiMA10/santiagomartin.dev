@@ -1,7 +1,17 @@
-import { Talk as TalkEntity } from "../entities/Talk";
 import { DateTime } from "luxon";
+import { ReactElement } from "react";
 
-export function Talk({ talk: { time, event, talk } }: { talk: TalkEntity }) {
+import { Talk as TalkEntity } from "../entities/Talk";
+
+interface Props {
+  talk: TalkEntity;
+}
+
+export function Talk(props: Props): ReactElement {
+  const {
+    talk: { time, event, talk },
+  } = props;
+
   return (
     <>
       🗣 {DateTime.fromMillis(time).toFormat("MMM yyyy")} -{" "}

@@ -1,4 +1,7 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
+import { ReactElement } from "react";
+
 import { Layout } from "../components/Layout";
 import { SideProjects } from "../components/SideProjects";
 import { SideProject } from "../entities/SideProject";
@@ -8,7 +11,7 @@ interface Props {
   projects: SideProject[];
 }
 
-export default function SideProjectsPage({ projects }: Props) {
+export default function SideProjectsPage({ projects }: Props): ReactElement {
   return (
     <Layout showGoBack={true}>
       <Head>
@@ -21,7 +24,7 @@ export default function SideProjectsPage({ projects }: Props) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const { data: projects } = await new GetSideProjects().perform();
 
   return {
@@ -29,4 +32,4 @@ export async function getStaticProps() {
       projects,
     },
   };
-}
+};

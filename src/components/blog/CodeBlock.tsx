@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
@@ -8,7 +8,9 @@ interface Props {
   nodeKey: string;
 }
 
-export default function CodeBlock({ language, value, nodeKey }: Props) {
+export default function CodeBlock(props: Props): ReactElement {
+  const { language, value, nodeKey } = props;
+
   return (
     <SyntaxHighlighter
       key={nodeKey}

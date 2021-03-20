@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { ReactElement } from "react";
 import Typist from "react-typist";
 
 interface Props {
   live: boolean;
 }
 
-export function AboutMe({ live }: Props) {
+export function AboutMe({ live }: Props): ReactElement {
   return (
     <section id="aboutme" className="mt-10">
       <h1 className="mb-4">

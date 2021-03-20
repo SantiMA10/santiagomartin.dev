@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactElement, ReactNode } from "react";
 
 interface Props {
   nodeKey: string;
@@ -6,7 +6,7 @@ interface Props {
   href: string;
 }
 
-export default function Link({ nodeKey, children, href }: Props) {
+export default function Link({ nodeKey, children, href }: Props): ReactElement {
   return (
     <a
       key={nodeKey}

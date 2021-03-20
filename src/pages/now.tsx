@@ -1,8 +1,10 @@
-import Link from "next/link";
 import Head from "next/head";
+import Link from "next/link";
+import { ReactElement } from "react";
+
 import { Layout } from "../components/Layout";
 
-export default function Now() {
+export default function Now(): ReactElement {
   return (
     <Layout showGoBack={true}>
       <Head>

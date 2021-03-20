@@ -1,13 +1,14 @@
-import { PostEntity } from "../entities/Post";
-import { Features } from "../config/Features";
 import Link from "next/link";
+import { ReactElement } from "react";
+
+import { PostEntity } from "../entities/Post";
 
 interface Props {
   posts: PostEntity[];
   limit?: number;
 }
 
-export function BlogPosts({ posts, limit }: Props) {
+export function BlogPosts({ posts, limit }: Props): ReactElement {
   return (
     <section id="blog-posts" className="mt-5">
       <h1 className="mb-4 font-bold">My blog posts</h1>

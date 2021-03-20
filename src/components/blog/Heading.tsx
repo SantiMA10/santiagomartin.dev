@@ -1,4 +1,4 @@
-import { ReactNode, createElement } from "react";
+import { createElement, ReactElement, ReactNode } from "react";
 
 interface Props {
   level: 1 | 2 | 3 | 4 | 5 | 6;
@@ -6,7 +6,9 @@ interface Props {
   nodeKey?: string;
 }
 
-export default function Heading({ children, level, nodeKey }: Props) {
+export default function Heading(props: Props): ReactElement {
+  const { children, level, nodeKey } = props;
+
   const styles = {
     1: "font-bold text-3xl sm:text-4xl",
     2: "font-bold text-xl sm:text-2xl",

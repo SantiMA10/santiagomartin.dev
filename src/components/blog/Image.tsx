@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+
 interface Props {
   alt: string;
   src: string;
@@ -5,7 +7,7 @@ interface Props {
   title: string;
 }
 
-export function Image({ alt, src, nodeKey, title }: Props) {
+export function Image({ alt, src, nodeKey, title }: Props): ReactElement {
   if (title) {
     return (
       <div className="flex justify-center algin-center flex-col pb-4 pt-4">

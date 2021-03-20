@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { ReactElement } from "react";
+
 import { Event as EventEntity } from "../entities/Event";
 import { Talk as TalkEntity } from "../entities/Talk";
 import { Event } from "./Event";
@@ -10,7 +12,7 @@ interface Props {
   limit?: number;
 }
 
-export function Community({ talks, limit, events }: Props) {
+export function Community({ talks, limit, events }: Props): ReactElement {
   const community = [
     ...(talks || []).map((talk) => ({ type: "talk", ...talk })),
     ...(events || []).map((event) => ({ type: "event", ...event })),
@@ -20,12 +22,12 @@ export function Community({ talks, limit, events }: Props) {
     <section id="talks" className="mt-5">
       <h1 className="mb-4 font-bold">Community</h1>
       <ul className="list-reset">
-        {community.slice(0, limit).map((item: any) => {
-          const { id, type } = item;
+        {community.slice(0, limit).map((item: TalkEntity | EventEntity) => {
+          const { id } = item;
 
           return (
             <li key={id} className="sm:ml-5 mb-2">
-              {type === "event" ? (
+              {item["type"] === "event" ? (
                 <Event event={item as EventEntity} />
               ) : (
                 <Talk talk={item as TalkEntity} />

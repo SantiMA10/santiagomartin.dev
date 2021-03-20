@@ -1,22 +1,24 @@
-import { GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
+import { ReactElement } from "react";
 import ReactMarkdown from "react-markdown";
+
 import CodeBlock from "../../components/blog/CodeBlock";
 import Heading from "../../components/blog/Heading";
 import { Image } from "../../components/blog/Image";
+import Link from "../../components/blog/Link";
 import ListItem from "../../components/blog/ListItem";
 import Paragraph from "../../components/blog/Paragraph";
+import Quote from "../../components/blog/Quote";
 import { Layout } from "../../components/Layout";
 import { PostEntity } from "../../entities/Post";
 import { MarkdownPostRepository } from "../../repositories/MarkdownPostRepository";
-import Quote from "../../components/blog/Quote";
-import Link from "../../components/blog/Link";
 
 interface Props {
   post: PostEntity;
 }
 
-export default function BlogPost({ post }: Props) {
+export default function BlogPost({ post }: Props): ReactElement {
   const title = `${post?.title} | santiagomartin.dev`;
   const description = post?.spoiler;
   const url = `https://santiagomartin.dev${post?.url}`;
@@ -94,11 +96,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await new MarkdownPostRepository().getAll();
 
   return {
     paths: posts.map((posts) => posts.url),
     fallback: true,
   };
-}
+};
