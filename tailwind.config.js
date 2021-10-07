@@ -27,5 +27,5 @@ module.exports = {
 			underlineThickness: ['hover', 'dark'],
 		},
 	},
-	plugins: [require('@tailwindcss/typography'), require('tailwind-underline-utils')],
+	plugins: [require('tailwind-underline-utils')],
 };
