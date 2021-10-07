@@ -10,9 +10,22 @@ module.exports = {
 				sans: ['JetBrains Mono', ...fontFamily.sans],
 			},
 		},
+		underlineThickness: {
+			thin: '2px',
+			thick: '5px',
+		},
+		underlineOffset: {
+			small: '2px',
+			medium: '5px',
+		},
 	},
 	variants: {
-		extend: {},
+		extend: {
+			underlineColors: ['hover', 'dark'],
+			underlineStyle: ['hover', 'dark'],
+			underlineOffset: ['hover', 'dark'],
+			underlineThickness: ['hover', 'dark'],
+		},
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/typography'), require('tailwind-underline-utils')],
 };

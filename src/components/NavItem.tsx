@@ -16,9 +16,9 @@ export default function NavItem({ children, href }: PropsWithChildren<Props>): J
 			<a
 				className={cn(
 					isActive
-						? 'font-semibold text-gray-800 dark:text-gray-200'
-						: 'font-normal text-gray-600 dark:text-gray-400',
-					'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all',
+						? 'underline underline-thickness-thick underline-offset-medium font-semibold text-gray-800 underline-gray-800 dark:underline-gray-200 dark:text-gray-200'
+						: 'hover:underline hover:underline-thickness-thick hover:underline-offset-medium font-normal text-gray-600 underline-gray-600 dark:underline-gray-400 dark:text-gray-400',
+					'p-1 sm:px-3 sm:py-2 rounded-lg transition-all',
 				)}
 			>
 				<span className="capsize">{children}</span>
