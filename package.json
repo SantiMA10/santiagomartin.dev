@@ -5,6 +5,7 @@
 		"name": "Santiago Martín Agra",
 		"email": "web@santiagomartin.dev"
 	},
+	"version": "3.0.0",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
