@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 
-import Container from '../components/Container';
+import Container from '../../components/Container';
 
-const Blog: NextPage = () => {
+const BlogPost: NextPage = () => {
 	return (
 		<Container customMeta={{ title: '/blog - Santiago Martín Agra' }}>
 			¡Hola! Esto se supone que será mi blog
@@ -10,4 +10,4 @@ const Blog: NextPage = () => {
 	);
 };
 
-export default Blog;
+export default BlogPost;

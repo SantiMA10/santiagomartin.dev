@@ -1,19 +1,32 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import Container from '../components/Container';
+import MDXContainer from '../components/MDXContainer';
+import getContentBySlug from '../lib/content';
 
-const Now: NextPage = () => {
+interface Props {
+	metadata: Record<string, string>;
+	source: MDXRemoteSerializeResult<Record<string, unknown>>;
+}
+
+const Now: NextPage<Props> = ({ source, metadata }: Props) => {
 	return (
-		<Container customMeta={{ title: '/now - Santiago Martín Agra' }}>
-			¡Hola! Aquí te cuento en que ando ahora mismo
-			<ul>
-				<li>👨‍💻 Trabajo como Software Engineer en PrivacyCloud.</li>
-				<li>📅 Cuando vuelva la &quot;antigua&quot; normalidad, volverá asturias.js.</li>
-				<li>😂 Me entretengo con algún pet project.</li>
-				<li>🏀 Intento jugar al baloncesto una vez por semana.</li>
-			</ul>
+		<Container customMeta={{ ...metadata }}>
+			<MDXContainer source={source} />
 		</Container>
 	);
 };
 
 export default Now;
+
+export const getStaticProps: GetStaticProps = async () => {
+	const { metadata, source } = await getContentBySlug('now');
+
+	return {
+		props: {
+			metadata,
+			source,
+		},
+	};
+};
