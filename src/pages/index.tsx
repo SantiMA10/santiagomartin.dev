@@ -8,12 +8,13 @@ import { getContentByUrl } from '../lib/content';
 interface Props {
 	metadata: Record<string, string>;
 	source: MDXRemoteSerializeResult<Record<string, unknown>>;
+	githubUrl: string;
 }
 
-const Home: NextPage<Props> = ({ source, metadata }: Props) => {
+const Home: NextPage<Props> = ({ source, metadata, githubUrl }: Props) => {
 	return (
 		<Container customMeta={{ ...metadata }}>
-			<MDXContainer source={source} />
+			<MDXContainer source={source} githubUrl={githubUrl} />
 		</Container>
 	);
 };
@@ -27,6 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	return {
 		props: {
+			githubUrl: 'https://github.com/SantiMA10/SantiMA10/edit/main/src/README.base.md',
 			metadata,
 			source,
 		},

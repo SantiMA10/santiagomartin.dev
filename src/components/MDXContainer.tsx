@@ -5,6 +5,7 @@ import { AnchorHTMLAttributes, ComponentProps, DetailedHTMLProps } from 'react';
 
 interface Props {
 	source: MDXRemoteSerializeResult<Record<string, unknown>>;
+	githubUrl?: string;
 }
 
 const components = {
@@ -35,7 +36,7 @@ const components = {
 	},
 	a: (props: DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>) => {
 		if (props?.href?.includes('http')) {
-			return <a {...props} target={'_black'} rel="noreferrer" />;
+			return <a {...props} target="_black" rel="noreferrer" />;
 		}
 
 		const { href, ...otherProps } = props;
@@ -48,10 +49,16 @@ const components = {
 	},
 };
 
-export default function MDXContainer({ source }: Props): JSX.Element {
+export default function MDXContainer({ source, githubUrl }: Props): JSX.Element {
 	return (
 		<article className="prose max-w-none lg:prose-lg dark:prose-dark">
 			<MDXRemote {...source} components={components} />
+
+			{githubUrl && (
+				<a className="mt-6 mb-6" href={githubUrl} target="_black" rel="noreferrer">
+					Editar en GitHub
+				</a>
+			)}
 		</article>
 	);
 }
