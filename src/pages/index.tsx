@@ -3,7 +3,7 @@ import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import Container from '../components/Container';
 import MDXContainer from '../components/MDXContainer';
-import getContentBySlug from '../lib/content';
+import { getContentByUrl } from '../lib/content';
 
 interface Props {
 	metadata: Record<string, string>;
@@ -21,7 +21,9 @@ const Home: NextPage<Props> = ({ source, metadata }: Props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-	const { metadata, source } = await getContentBySlug('home');
+	const { metadata, source } = await getContentByUrl(
+		'https://raw.githubusercontent.com/SantiMA10/SantiMA10/main/README.md',
+	);
 
 	return {
 		props: {

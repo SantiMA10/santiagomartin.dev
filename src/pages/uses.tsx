@@ -4,7 +4,7 @@ import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import Container from '../components/Container';
 import MDXContainer from '../components/MDXContainer';
-import getContentBySlug from '../lib/content';
+import { getContentBySlug } from '../lib/content';
 
 interface Props {
 	metadata: Record<string, string>;

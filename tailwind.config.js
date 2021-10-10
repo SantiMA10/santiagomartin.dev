@@ -3,7 +3,12 @@ const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
 	mode: 'jit',
-	purge: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
+	purge: {
+		content: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
+		options: {
+			safelist: ['my-2'],
+		},
+	},
 	darkMode: 'class',
 	theme: {
 		extend: {
@@ -11,6 +16,14 @@ module.exports = {
 				sans: ['JetBrains Mono', ...fontFamily.sans],
 			},
 			typography: (theme) => ({
+				DEFAULT: {
+					css: {
+						img: {
+							margin: 'auto',
+							display: 'inline-block',
+						},
+					},
+				},
 				dark: {
 					css: {
 						'color': theme('colors.gray.200'),
