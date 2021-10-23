@@ -16,8 +16,8 @@ export default function NavBar(): JSX.Element {
 				<NavItem href="/">🏡 Home</NavItem>
 				<NavItem href="/blog">✍️ /blog</NavItem>
 				<NavItem href="/now">📅 /now</NavItem>
-				<NavItem href="/uses">💾 /uses</NavItem>
-				<NavItem href="/open">🔓 /open</NavItem>
+				{/* <NavItem href="/uses">💾 /uses</NavItem>
+				<NavItem href="/open">🔓 /open</NavItem> */}
 			</div>
 			<button
 				aria-label="Toggle Dark Mode"
