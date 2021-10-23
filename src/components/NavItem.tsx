@@ -5,11 +5,16 @@ import { PropsWithChildren } from 'react';
 
 interface Props {
 	href: string;
+	subPaths?: boolean;
 }
 
-export default function NavItem({ children, href }: PropsWithChildren<Props>): JSX.Element {
+export default function NavItem({
+	children,
+	href,
+	subPaths,
+}: PropsWithChildren<Props>): JSX.Element {
 	const router = useRouter();
-	const isActive = router.asPath === href;
+	const isActive = subPaths ? router.asPath.includes(href) : router.asPath === href;
 
 	return (
 		<NextLink href={href}>

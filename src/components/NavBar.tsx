@@ -14,7 +14,9 @@ export default function NavBar(): JSX.Element {
 		<div className="flex justify-between mb-4">
 			<div className="flex">
 				<NavItem href="/">🏡 Home</NavItem>
-				<NavItem href="/blog">✍️ /blog</NavItem>
+				<NavItem href="/blog" subPaths>
+					✍️ /blog
+				</NavItem>
 				<NavItem href="/now">📅 /now</NavItem>
 				{/* <NavItem href="/uses">💾 /uses</NavItem>
 				<NavItem href="/open">🔓 /open</NavItem> */}
