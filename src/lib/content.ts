@@ -17,7 +17,13 @@ export interface GetContentBy {
 }
 
 export async function getContentBySlug(slug: string): Promise<GetContentBySlug> {
-	const fileContents = fs.readFileSync(path.join(process.cwd(), `/data/${slug}.mdx`), 'utf8');
+	const filePath = path.join(process.cwd(), `/data/${slug}.mdx`);
+	if (!fs.existsSync(filePath)) {
+		throw new Error('File not found');
+	}
+
+	const fileContents = fs.readFileSync(filePath, 'utf8');
+
 	const { data, content } = matter(fileContents);
 
 	const mdxSource = await serialize(content, {

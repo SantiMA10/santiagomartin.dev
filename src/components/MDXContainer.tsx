@@ -51,7 +51,7 @@ const components = {
 
 export default function MDXContainer({ source, githubUrl }: Props): JSX.Element {
 	return (
-		<article className="prose max-w-none lg:prose-lg dark:prose-dark">
+		<>
 			<MDXRemote {...source} components={components} />
 
 			{githubUrl && (
@@ -62,6 +62,6 @@ export default function MDXContainer({ source, githubUrl }: Props): JSX.Element 
 			<div
 				dangerouslySetInnerHTML={{ __html: '<!-- You will not be able to see this text. -->' }}
 			></div>
-		</article>
+		</>
 	);
 }

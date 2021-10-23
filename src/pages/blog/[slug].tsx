@@ -9,7 +9,7 @@ type Props = GetContentBySlug;
 const BlogPost: NextPage<Props> = ({ source, metadata, githubUrl }: Props) => {
 	return (
 		<Container customMeta={{ ...metadata }}>
-			<MDXContainer source={source} githubUrl={githubUrl} />
+			{source && <MDXContainer source={source} githubUrl={githubUrl} />}
 		</Container>
 	);
 };
@@ -17,22 +17,29 @@ const BlogPost: NextPage<Props> = ({ source, metadata, githubUrl }: Props) => {
 export default BlogPost;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-	const { metadata, source, githubUrl } = await getContentBySlug(
-		`posts/${params?.slug?.toString()}`,
-	);
+	try {
+		const { metadata, source, githubUrl } = await getContentBySlug(
+			`posts/${params?.slug?.toString()}`,
+		);
 
-	return {
-		props: {
-			githubUrl,
-			metadata,
-			source,
-		},
-	};
+		return {
+			props: {
+				githubUrl,
+				metadata,
+				source,
+			},
+		};
+	} catch {
+		return {
+			props: {},
+			notFound: true,
+		};
+	}
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	return {
 		paths: [],
-		fallback: true,
+		fallback: 'blocking',
 	};
 };

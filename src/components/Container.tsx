@@ -41,7 +41,7 @@ export default function Container({ customMeta, children }: PropsWithChildren<Pr
 			<div className="flex items-center flex-col flex-grow">
 				<div className="w-11/12 sm:w-4/5 md:w-3/4 mt-10 flex flex-col">
 					<NavBar />
-					{children}
+					<article className="prose max-w-none lg:prose-lg dark:prose-dark">{children}</article>
 				</div>
 			</div>
 		</div>
