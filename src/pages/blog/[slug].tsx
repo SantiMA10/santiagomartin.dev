@@ -1,13 +1,38 @@
-import type { NextPage } from 'next';
+import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import Container from '../../components/Container';
+import MDXContainer from '../../components/MDXContainer';
+import { GetContentBySlug, getContentBySlug } from '../../lib/content';
 
-const BlogPost: NextPage = () => {
+type Props = GetContentBySlug;
+
+const BlogPost: NextPage<Props> = ({ source, metadata, githubUrl }: Props) => {
 	return (
-		<Container customMeta={{ title: '/blog - Santiago Martín Agra' }}>
-			¡Hola! Esto se supone que será mi blog
+		<Container customMeta={{ ...metadata }}>
+			<MDXContainer source={source} githubUrl={githubUrl} />
 		</Container>
 	);
 };
 
 export default BlogPost;
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+	const { metadata, source, githubUrl } = await getContentBySlug(
+		`posts/${params?.slug?.toString()}`,
+	);
+
+	return {
+		props: {
+			githubUrl,
+			metadata,
+			source,
+		},
+	};
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+	return {
+		paths: [],
+		fallback: true,
+	};
+};
