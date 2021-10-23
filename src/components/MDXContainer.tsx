@@ -55,10 +55,13 @@ export default function MDXContainer({ source, githubUrl }: Props): JSX.Element 
 			<MDXRemote {...source} components={components} />
 
 			{githubUrl && (
-				<a className="mt-6 mb-6" href={githubUrl} target="_black" rel="noreferrer">
+				<a className="my-6" href={githubUrl} target="_black" rel="noreferrer">
 					Editar en GitHub
 				</a>
 			)}
+			<div
+				dangerouslySetInnerHTML={{ __html: '<!-- You will not be able to see this text. -->' }}
+			></div>
 		</article>
 	);
 }
