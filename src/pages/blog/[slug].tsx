@@ -39,7 +39,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	return {
-		paths: [],
-		fallback: 'blocking',
+		paths: [
+			'/blog/que-opinais-de-github-actions',
+			'/blog/hola-deno',
+			'/blog/gitlab-github-streamdeck',
+		],
+		fallback: true,
 	};
 };
