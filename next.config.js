@@ -24,6 +24,11 @@ module.exports = {
 				destination: 'streamdeck://plugin/install/dev.santiagomartin.devops',
 				permanent: false,
 			},
+			{
+				source: '/dm',
+				destination: 'https://twitter.com/messages/compose?recipient_id=1397520804959694849',
+				permanent: false,
+			},
 		];
 	},
 };
