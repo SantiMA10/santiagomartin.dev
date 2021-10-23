@@ -1,4 +1,5 @@
-import type { GetStaticProps, NextPage } from 'next';
+import type { NextPage } from 'next';
+import { GetStaticProps } from 'next';
 
 import Container from '../components/Container';
 import MDXContainer from '../components/MDXContainer';
@@ -6,7 +7,7 @@ import { GetContentBySlug, getContentBySlug } from '../lib/content';
 
 type Props = GetContentBySlug;
 
-const Now: NextPage<Props> = ({ source, metadata, githubUrl }: Props) => {
+const Uses: NextPage<Props> = ({ source, metadata, githubUrl }: Props) => {
 	return (
 		<Container customMeta={{ ...metadata }}>
 			<MDXContainer source={source} githubUrl={githubUrl} />
@@ -14,10 +15,10 @@ const Now: NextPage<Props> = ({ source, metadata, githubUrl }: Props) => {
 	);
 };
 
-export default Now;
+export default Uses;
 
 export const getStaticProps: GetStaticProps = async () => {
-	const { metadata, source, githubUrl } = await getContentBySlug('now');
+	const { metadata, source, githubUrl } = await getContentBySlug('uses');
 
 	return {
 		props: {

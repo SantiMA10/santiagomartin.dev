@@ -1,0 +1,8 @@
+{
+	"extends": "@santima10/eslint-config/nextjs",
+	"env": {
+		"browser": true,
+		"amd": true,
+		"node": true
+	}
+}

@@ -1,13 +1,30 @@
-import { ReactElement, useEffect } from 'react';
+import type { NextPage } from 'next';
 
-function Error(): ReactElement {
-	useEffect(() => {
-		if (window) {
-			window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
-		}
-	}, []);
+import Container from '../components/Container';
 
-	return null;
+interface Props {
+	statusCode: number;
 }
 
-export default Error;
+const ErrorPage: NextPage<Props> = (props: Props) => {
+	return (
+		<Container customMeta={{ title: `${props.statusCode} Error - Santiago Martín Agra` }}>
+			<h2>😱 Ups! Has encontrado un error {props.statusCode}.</h2>
+			Ni idea de como has llegado aquí, ¿serías tan amable de{' '}
+			<a
+				href="https://github.com/SantiMA10/santiagomartin.dev/issues/new"
+				target="_black"
+				rel="noreferrer"
+			>
+				abrir una issue
+			</a>{' '}
+			explicando que ha pasado?
+		</Container>
+	);
+};
+
+ErrorPage.getInitialProps = ({ res }) => {
+	return { statusCode: res?.statusCode || 404 };
+};
+
+export default ErrorPage;

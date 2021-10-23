@@ -1,74 +1,36 @@
-import { GetStaticProps } from 'next';
-import Head from 'next/head';
-import { ReactElement, useEffect, useState } from 'react';
+import type { GetStaticProps, NextPage } from 'next';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
-import { AboutMe } from '../components/AboutMe/AboutMe';
-import { BlogPosts } from '../components/BlogPosts';
-import { Community } from '../components/Community';
-import { Layout } from '../components/Layout';
-import { SideProjects } from '../components/SideProjects';
-import { Event } from '../entities/Event';
-import { PostEntity } from '../entities/Post';
-import { SideProject } from '../entities/SideProject';
-import { Talk } from '../entities/Talk';
-import { StaticEventRepository } from '../repositories/StaticEventRepository';
-import { StaticTalkRepository } from '../repositories/StaticTalkRepository';
-import { GetLiveStatus } from '../useCases/GetLiveStatus';
-import { GetPosts } from '../useCases/GetPosts';
-import { GetSideProjects } from '../useCases/GetSideProjects';
+import Container from '../components/Container';
+import MDXContainer from '../components/MDXContainer';
+import { getContentByUrl } from '../lib/content';
 
 interface Props {
-	posts: PostEntity[];
-	projects: SideProject[];
-	talks: Talk[];
-	events: Event[];
+	metadata: Record<string, string>;
+	source: MDXRemoteSerializeResult<Record<string, unknown>>;
+	githubUrl: string;
 }
 
-export default function Home(props: Props): ReactElement {
-	const { posts, projects, talks, events } = props;
-	const [live, setLive] = useState(false);
-
-	useEffect(() => {
-		const getLive = async () => {
-			const {
-				data: { live },
-			} = await new GetLiveStatus().perform();
-
-			setLive(live);
-		};
-
-		getLive();
-	}, []);
-
+const Home: NextPage<Props> = ({ source, metadata, githubUrl }: Props) => {
 	return (
-		<Layout>
-			<Head>
-				<title>Santiago Martín Agra | Software Engineer</title>
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-
-			<main className="flex flex-col flex-grow">
-				<AboutMe live={live} />
-				<BlogPosts posts={posts} limit={4} />
-				<Community talks={talks} events={events} limit={4} />
-				<SideProjects projects={projects} limit={4} />
-			</main>
-		</Layout>
+		<Container customMeta={{ ...metadata }}>
+			<MDXContainer source={source} githubUrl={githubUrl} />
+		</Container>
 	);
-}
+};
+
+export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-	const { data: posts } = await new GetPosts().perform();
-	const { data: projects } = await new GetSideProjects().perform();
-	const talks = await new StaticTalkRepository().getAll();
-	const events = await new StaticEventRepository().getAll();
+	const { metadata, source } = await getContentByUrl(
+		'https://raw.githubusercontent.com/SantiMA10/SantiMA10/main/README.md',
+	);
 
 	return {
 		props: {
-			posts,
-			projects,
-			talks,
-			events,
+			githubUrl: 'https://github.com/SantiMA10/SantiMA10/edit/main/src/README.base.md',
+			metadata,
+			source,
 		},
 	};
 };
