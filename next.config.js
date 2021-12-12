@@ -30,6 +30,11 @@ module.exports = {
 				destination: 'https://twitter.com/messages/compose?recipient_id=1397520804959694849',
 				permanent: false,
 			},
+			{
+				source: '/1to1',
+				destination: 'https://cal.com/santima10',
+				permanent: false,
+			},
 		];
 	},
 };
