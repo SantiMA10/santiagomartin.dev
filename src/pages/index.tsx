@@ -32,5 +32,6 @@ export const getStaticProps: GetStaticProps = async () => {
 			metadata,
 			source,
 		},
+		revalidate: true,
 	};
 };
