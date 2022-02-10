@@ -2,6 +2,7 @@ import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
 import { PropsWithChildren } from 'react';
 
+import { Footer } from './Footer';
 import NavBar from './NavBar';
 
 interface Props {
@@ -39,9 +40,12 @@ export default function Container({ customMeta, children }: PropsWithChildren<Pr
 			</Head>
 
 			<div className="flex items-center flex-col flex-grow">
-				<div className="w-11/12 sm:w-4/5 md:w-3/4 mt-10 flex flex-col">
+				<div className="w-11/12 sm:w-4/5 md:w-3/4 pt-10 pb-4 flex flex-col min-h-screen">
 					<NavBar />
-					<article className="prose max-w-none lg:prose-lg dark:prose-dark">{children}</article>
+					<article className="prose max-w-none lg:prose-lg dark:prose-dark flex-1">
+						{children}
+					</article>
+					<Footer />
 				</div>
 			</div>
 		</div>
