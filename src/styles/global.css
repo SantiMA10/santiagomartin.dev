@@ -1,0 +1,12 @@
+#twitch-videos {
+	display: flex;
+	justify-content: space-around;
+}
+
+#twitch-videos a {
+	display: flex;
+}
+
+#twitch-videos img {
+	flex-grow: 1;
+}
