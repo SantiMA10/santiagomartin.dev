@@ -1,6 +1,6 @@
 ---
 title: 'GitLab/GitHub en el Stream Deck'
-status: 'draft'
+status: 'published'
 author:
   name: 'Santi'
   picture: 'https://avatars.githubusercontent.com/u/7255298?v=4'
@@ -65,6 +65,4 @@ Si queréis ver cómo fue el proceso lo podéis ver en mi canal de Twitch: [Sant
 \---
 
 [https://github.com/SantiMA10/devops-streamdeck](https://github.com/SantiMA10/devops-streamdeck)
-
-
 
