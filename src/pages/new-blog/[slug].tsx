@@ -25,7 +25,7 @@ const BlogPost: NextPage<Props> = ({ page, githubUrl }: Props) => {
 
 export default BlogPost;
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<Props> = async ({ params }) => {
 	if (typeof params?.slug !== 'string') {
 		return {
 			props: {},

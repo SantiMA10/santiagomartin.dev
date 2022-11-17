@@ -10,7 +10,11 @@ interface Post {
 	publishedAt: string;
 }
 
-const Blog: NextPage<{ allPosts: Post[] }> = ({ allPosts }: { allPosts: Post[] }) => {
+interface Props {
+	allPosts: Post[];
+}
+
+const Blog: NextPage<Props> = ({ allPosts }: Props) => {
 	return (
 		<Container customMeta={{ title: '/blog - Santiago Martín Agra' }}>
 			Aquí tienes una lista con mis últimos articulos:
@@ -30,8 +34,9 @@ const Blog: NextPage<{ allPosts: Post[] }> = ({ allPosts }: { allPosts: Post[] }
 
 export default Blog;
 
-export const getServerSideProps: GetServerSideProps<{ allPosts: Post[] }> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
 	const allPosts = getDocuments('posts', ['title', 'publishedAt', 'slug']) as unknown as Post[];
+	console.log(allPosts);
 
 	return {
 		props: { allPosts },
