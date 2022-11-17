@@ -23,7 +23,7 @@ const Blog: NextPage<Props> = ({ allPosts }: Props) => {
 					return (
 						<li key={post.slug}>
 							{new Intl.DateTimeFormat().format(new Date(post.publishedAt))} -{' '}
-							<Link href={`/new-blog/${post.slug}`}>{post.title}</Link>
+							<Link href={`/blog/${post.slug}`}>{post.title}</Link>
 						</li>
 					);
 				})}

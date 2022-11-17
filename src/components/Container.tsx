@@ -14,10 +14,11 @@ export default function Container({ customMeta, children }: PropsWithChildren<Pr
 	const meta = {
 		title: 'Santiago Martín Agra – software engineer',
 		description: `software engineer, TypeScript believer, and live code.`,
-		image: 'https://santiagomartin.dev/favicon.png',
 		type: 'website',
 		...customMeta,
 	};
+
+	const url = `https://santiagomartin.dev${router.asPath}`;
 
 	return (
 		<div>
@@ -25,18 +26,24 @@ export default function Container({ customMeta, children }: PropsWithChildren<Pr
 				<title>{meta.title}</title>
 				<meta name="robots" content="follow, index" />
 				<meta content={meta.description} name="description" />
-				<meta property="og:url" content={`https://santiagomartin.dev${router.asPath}`} />
-				<link rel="canonical" href={`https://santiagomartin.dev${router.asPath}`} />
+				<meta property="og:url" content={url} />
+				<link rel="canonical" href={url} />
 				<meta property="og:type" content={meta.type} />
 				<meta property="og:site_name" content="Santiago Martín Agra" />
 				<meta property="og:description" content={meta.description} />
 				<meta property="og:title" content={meta.title} />
-				<meta property="og:image" content={meta.image} />
+				<meta
+					property="og:image"
+					content={`https://santiagomartin.dev/api/og?title=${meta.title}`}
+				/>
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:site" content="@SantiMA10b" />
 				<meta name="twitter:title" content={meta.title} />
 				<meta name="twitter:description" content={meta.description} />
-				<meta name="twitter:image" content={meta.image} />
+				<meta
+					name="twitter:image"
+					content={`https://santiagomartin.dev/api/og?title=${meta.title}`}
+				/>
 			</Head>
 
 			<div className="flex items-center flex-col flex-grow">
