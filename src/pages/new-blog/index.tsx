@@ -1,25 +1,13 @@
-import type { GetStaticProps, NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import Link from 'next/link';
 import { getDocuments } from 'outstatic/server';
 
 import Container from '../../components/Container';
 
-interface Author {
-	name: string;
-	picture: string;
-}
-
 interface Post {
 	slug: string;
 	title: string;
 	publishedAt: string;
-	coverImage: string;
-	author: Author;
-	description: string;
-	ogImage: {
-		url: string;
-	};
-	content: string;
 }
 
 const Blog: NextPage<{ allPosts: Post[] }> = ({ allPosts }: { allPosts: Post[] }) => {
@@ -30,7 +18,8 @@ const Blog: NextPage<{ allPosts: Post[] }> = ({ allPosts }: { allPosts: Post[] }
 				{allPosts.map((post) => {
 					return (
 						<li key={post.slug}>
-							{post.publishedAt} - <Link href={`/new-blog/${post.slug}`}>{post.title}</Link>
+							{new Intl.DateTimeFormat().format(new Date(post.publishedAt))} -{' '}
+							<Link href={`/new-blog/${post.slug}`}>{post.title}</Link>
 						</li>
 					);
 				})}
@@ -41,15 +30,8 @@ const Blog: NextPage<{ allPosts: Post[] }> = ({ allPosts }: { allPosts: Post[] }
 
 export default Blog;
 
-export const getStaticProps: GetStaticProps<{ allPosts: Post[] }> = async () => {
-	const allPosts = getDocuments('posts', [
-		'title',
-		'publishedAt',
-		'slug',
-		'coverImage',
-		'description',
-		'author',
-	]) as unknown as Post[];
+export const getServerSideProps: GetServerSideProps<{ allPosts: Post[] }> = async () => {
+	const allPosts = getDocuments('posts', ['title', 'publishedAt', 'slug']) as unknown as Post[];
 
 	return {
 		props: { allPosts },

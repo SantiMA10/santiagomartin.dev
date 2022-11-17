@@ -21,7 +21,7 @@
 		"next": "12",
 		"next-mdx-remote": "^3.0.5",
 		"next-themes": "^0.0.15",
-		"outstatic": "^0.0.32-rc",
+		"outstatic": "^0.0.33-rc",
 		"postcss": "^8.3.9",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
