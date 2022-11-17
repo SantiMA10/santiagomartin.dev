@@ -9,30 +9,17 @@ interface Props {
 }
 
 const components = {
-	img: (props: ComponentProps<typeof Image> & { style?: string }) => {
-		if (props.src.toString().includes('http') && typeof props.src === 'string') {
-			const styles = props.style?.split(';').reduce((all, style) => {
-				const [name, value] = style.split(':');
-
-				return {
-					...all,
-					[name]: value,
-				};
-			}, {});
-
-			return (
-				// eslint-disable-next-line @next/next/no-img-element
-				<img
-					src={props.src}
-					alt={props?.alt}
-					width={props?.width}
-					height={props?.height}
-					style={styles}
-				/>
-			);
+	img: (props: ComponentProps<typeof Image>) => {
+		if (typeof props.src !== 'string') {
+			return;
 		}
 
-		return <Image alt={props.alt} layout="responsive" loading="lazy" {...props} />;
+		return (
+			<div style={{ textAlign: 'center' }}>
+				{/* eslint-disable-next-line @next/next/no-img-element */}
+				<img src={props.src} alt={props?.alt} width={props?.width} height={props?.height} />
+			</div>
+		);
 	},
 	a: (props: DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>) => {
 		if (props?.href?.includes('http')) {
@@ -49,7 +36,7 @@ const components = {
 	},
 };
 
-export default function OldMDXContainer({ source, githubUrl }: Props): JSX.Element {
+export default function MDXContainer({ source, githubUrl }: Props): JSX.Element {
 	return (
 		<>
 			<MDXRemote {...source} components={components} />

@@ -2,7 +2,7 @@ import type { GetStaticProps, NextPage } from 'next';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import Container from '../components/Container';
-import MDXContainer from '../components/OldMDXContainer';
+import MDXContainer from '../components/MDXContainer';
 import { getContentByUrl } from '../lib/content';
 
 interface Props {

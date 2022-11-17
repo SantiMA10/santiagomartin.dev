@@ -1,27 +1,43 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
+import { getDocuments } from 'outstatic/server';
 
 import Container from '../../components/Container';
 
-const Blog: NextPage = () => {
+interface Post {
+	slug: string;
+	title: string;
+	publishedAt: string;
+}
+
+interface Props {
+	allPosts: Post[];
+}
+
+const Blog: NextPage<Props> = ({ allPosts }: Props) => {
 	return (
 		<Container customMeta={{ title: '/blog - Santiago Martín Agra' }}>
-			Aquí tienes una lista con mis últimos articulos
+			Aquí tienes una lista con mis últimos articulos:
 			<ul>
-				<li>
-					May 2020 - <Link href="/blog/hola-deno">¡Hola deno! 🦕</Link>
-				</li>
-				<li>
-					Mar 2020 -{' '}
-					<Link href="/blog/gitlab-github-streamdeck">GitLab/GitHub en el Stream Deck</Link>
-				</li>
-				<li>
-					Feb 2020 -{' '}
-					<Link href="/blog/que-opinais-de-github-actions">¿Qué opináis de GitHub Actions?</Link>
-				</li>
+				{allPosts.map((post) => {
+					return (
+						<li key={post.slug}>
+							{new Intl.DateTimeFormat().format(new Date(post.publishedAt))} -{' '}
+							<Link href={`/new-blog/${post.slug}`}>{post.title}</Link>
+						</li>
+					);
+				})}
 			</ul>
 		</Container>
 	);
 };
 
 export default Blog;
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+	const allPosts = getDocuments('posts', ['title', 'publishedAt', 'slug']) as unknown as Post[];
+
+	return {
+		props: { allPosts },
+	};
+};

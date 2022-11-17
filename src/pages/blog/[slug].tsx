@@ -1,32 +1,53 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { serialize } from 'next-mdx-remote/serialize';
+import { getDocumentBySlug, getDocumentPaths } from 'outstatic/server';
 
 import Container from '../../components/Container';
-import MDXContainer from '../../components/OldMDXContainer';
-import { GetContentBySlug, getContentBySlug } from '../../lib/content';
+import MDXContainer from '../../components/OutstaticMDXContainer';
 
-type Props = GetContentBySlug;
+interface Props {
+	page: {
+		content: MDXRemoteSerializeResult<Record<string, unknown>>;
+	};
+	githubUrl: string;
+}
 
-const BlogPost: NextPage<Props> = ({ source, metadata, githubUrl }: Props) => {
+const BlogPost: NextPage<Props> = ({ page, githubUrl }: Props) => {
+	const { content, ...meta } = page;
+
 	return (
-		<Container customMeta={{ ...metadata }}>
-			{source && <MDXContainer source={source} githubUrl={githubUrl} />}
+		<Container customMeta={{ ...meta }}>
+			{page.content && <MDXContainer source={content} githubUrl={githubUrl} />}
 		</Container>
 	);
 };
 
 export default BlogPost;
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+	if (typeof params?.slug !== 'string') {
+		return {
+			props: {},
+			notFound: true,
+		};
+	}
+
 	try {
-		const { metadata, source, githubUrl } = await getContentBySlug(
-			`posts/${params?.slug?.toString()}`,
-		);
+		const page = getDocumentBySlug('posts', params.slug, [
+			'title',
+			'publishedAt',
+			'slug',
+			'content',
+		]);
 
 		return {
 			props: {
-				githubUrl,
-				metadata,
-				source,
+				page: {
+					...page,
+					content: await serialize(page.content),
+				},
+				githubUrl: `https://github.com/SantiMA10/santiagomartin.dev/edit/main/data/outstatic/content/posts/${params.slug}.md`,
 			},
 		};
 	} catch {
@@ -39,11 +60,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	return {
-		paths: [
-			'/blog/que-opinais-de-github-actions',
-			'/blog/hola-deno',
-			'/blog/gitlab-github-streamdeck',
-		],
-		fallback: true,
+		paths: getDocumentPaths('posts'),
+		fallback: false,
 	};
 };

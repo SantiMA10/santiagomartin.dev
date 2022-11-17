@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next';
 
 import Container from '../components/Container';
-import MDXContainer from '../components/OldMDXContainer';
+import MDXContainer from '../components/MDXContainer';
 import { GetContentBySlug, getContentBySlug } from '../lib/content';
 
 type Props = GetContentBySlug;
