@@ -1,29 +1,40 @@
 import type { GetStaticProps, NextPage } from 'next';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { serialize } from 'next-mdx-remote/serialize';
+import { getDocumentBySlug } from 'outstatic/server';
 
 import Container from '../components/Container';
-import MDXContainer from '../components/MDXContainer';
-import { GetContentBySlug, getContentBySlug } from '../lib/content';
+import OutstaticMDXContainer from '../components/OutstaticMDXContainer';
 
-type Props = GetContentBySlug;
+interface Props {
+	page: {
+		content: MDXRemoteSerializeResult<Record<string, unknown>>;
+	};
+	githubUrl: string;
+}
 
-const Now: NextPage<Props> = ({ source, metadata, githubUrl }: Props) => {
+const Now: NextPage<Props> = ({ page, githubUrl }: Props) => {
+	const { content, ...metadata } = page;
+
 	return (
 		<Container customMeta={{ ...metadata }}>
-			<MDXContainer source={source} githubUrl={githubUrl} />
+			<OutstaticMDXContainer source={content} githubUrl={githubUrl} />
 		</Container>
 	);
 };
 
 export default Now;
 
-export const getStaticProps: GetStaticProps = async () => {
-	const { metadata, source, githubUrl } = await getContentBySlug('now');
+export const getStaticProps: GetStaticProps<Props> = async () => {
+	const page = getDocumentBySlug('pages', 'now', ['title', 'publishedAt', 'slug', 'content']);
 
 	return {
 		props: {
-			githubUrl,
-			metadata,
-			source,
+			page: {
+				...page,
+				content: await serialize(page.content),
+			},
+			githubUrl: `https://github.com/SantiMA10/santiagomartin.dev/edit/main/data/outstatic/content/pages/now.md`,
 		},
 	};
 };
