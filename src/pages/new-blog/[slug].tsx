@@ -17,7 +17,7 @@ const BlogPost: NextPage<Props> = ({ page, githubUrl }: Props) => {
 	const { content, ...meta } = page;
 
 	return (
-		<Container customMeta={meta}>
+		<Container customMeta={{ ...meta }}>
 			{page.content && <MDXContainer source={content} githubUrl={githubUrl} />}
 		</Container>
 	);
