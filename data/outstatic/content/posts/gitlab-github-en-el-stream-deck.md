@@ -5,7 +5,7 @@ author:
   name: 'Santi'
   picture: 'https://avatars.githubusercontent.com/u/7255298?v=4'
 slug: 'gitlab-github-en-el-stream-deck'
-description: 'Una nueva forma de utilizar TypeScript/JavaScript para crear aplicaciones en el lado del servidor más seguras.'
+description: 'Controla tus CI/CD desde tu StreamDeck'
 coverImage: '/images/gitlab-github-streamdeck-UzMz.png'
 publishedAt: '2020-03-16T10:53:07.000Z'
 ---
@@ -14,7 +14,7 @@ publishedAt: '2020-03-16T10:53:07.000Z'
 
 Primer side project de 2020 🚀 se llama DevOps for Stream Deck, no se si el nombre es lo más acertado, pero era lo que se me ocurría.
 
-![](/images/gitlab-github-streamdeck-E5Nj.png)
+![Las acciones en el Stream Deck con varios proyectos de GitLab/GitHub.](/images/gitlab-github-streamdeck-E5Nj.png)
 
 # La idea 💡
 
@@ -40,7 +40,7 @@ Utilizando los tokens que nos dejan generar ambos servicios desde los ajustes, p
 
 Una vez configurado nuestro token y el nombre del repo que queremos controlar el funcionamiento es supersencillo: cada vez que pulsamos la tecla en el Stream Deck, se hace la petición al servicio correspondiente y se pinta el estado que nos devuelve.
 
-![](/images/gitlab-github-streamdeck-config-I1MD.png)
+![Configuración del Stream Deck desde Mac.](/images/gitlab-github-streamdeck-config-I1MD.png)
 
 Por ahora es compatible con GitHub Actions y GitLab CI, pero encantado de añadir soporte a otros servicios como Circle CI, Google Cloud Build… o revisar PRs si alguien se anima 😜 .
 
@@ -64,7 +64,7 @@ No hay ninguna restricción que impida usar frameworks o TypeScript, simplemente
 
 Si queréis ver cómo fue el proceso lo podéis ver en mi canal de Twitch: [SantiMA10](https://twitch.tv/SantiMA10), si aún no me han silenciado todos los directos por poner música con copyright 😅 (las BSO de Los Vengadores y Uncharted 4).
 
-****---
+---
 
 [https://github.com/SantiMA10/devops-streamdeck](https://github.com/SantiMA10/devops-streamdeck)
 
