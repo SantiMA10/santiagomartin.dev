@@ -19,16 +19,16 @@ import { getDocuments } from 'outstatic/server';
 		favicon: 'https://santiagomartin.dev/favicon.ico',
 		copyright: 'All rights reserved 2022, Santiago Martin',
 		author,
+		generator: 'https://github.com/SantiMA10/santiagomartin.dev',
 	});
 
-	const posts = getDocuments('posts', ['title', 'publishedAt', 'slug', 'description', 'content']);
+	const posts = getDocuments('posts', ['title', 'publishedAt', 'slug', 'description']);
 	posts.forEach((post) => {
 		feed.addItem({
 			title: post.title,
 			id: post.slug,
 			link: `https://santiagomartin.dev/blog/${post.slug}`,
 			description: post.description,
-			content: post.content,
 			author: [author],
 			date: new Date(post.publishedAt),
 		});
