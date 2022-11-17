@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://santiagomartin.dev/</id>
+    <title>/blog - Santiago Martín</title>
+    <updated>2022-11-17T19:39:25.602Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>Santiago Martín Agra</name>
+        <email>web@santiagomartin.dev</email>
+        <uri>https://santiagomartin.dev</uri>
+    </author>
+    <link rel="alternate" href="https://santiagomartin.dev/"/>
+    <logo>https://santiagomartin.dev/favicon.ico</logo>
+    <icon>https://santiagomartin.dev/favicon.ico</icon>
+    <rights>All rights reserved 2022, Santiago Martin</rights>
+    <entry>
+        <title type="html"><![CDATA[GitLab/GitHub en el Stream Deck]]></title>
+        <id>gitlab-github-en-el-stream-deck</id>
+        <link href="https://santiagomartin.dev/blog/gitlab-github-en-el-stream-deck"/>
+        <updated>2020-03-16T10:53:07.000Z</updated>
+        <summary type="html"><![CDATA[Controla tus CI/CD desde tu StreamDeck]]></summary>
+        <content type="html"><![CDATA[
+¡Hola! 👋🏻
+
+Primer side project de 2020 🚀 se llama DevOps for Stream Deck, no se si el nombre es lo más acertado, pero era lo que se me ocurría.
+
+![Las acciones en el Stream Deck con varios proyectos de GitLab/GitHub.](/images/gitlab-github-streamdeck-E5Nj.png)
+
+# La idea 💡
+
+Utilizar el Stream Deck de elgato para poder visualizar el estado del CI de proyectos que tengo alojados en GitLab y GitHub.
+
+Nota: si no sabéis lo que es un Stream Deck os dejo el link a la página de elgato donde lo explican mejor que yo.
+
+[https://www.elgato.com/en/gaming/stream-deck](https://www.elgato.com/en/gaming/stream-deck)
+
+# El MVP 🚀
+
+## Lo primero… ¿cómo se crean aplicaciones para el Stream Deck?
+
+Pues muy sencillo, como casi todo en esta vida con JavaScript 🥳.
+
+[https://developer.elgato.com/documentation/stream-deck/sdk/overview/](https://developer.elgato.com/documentation/stream-deck/sdk/overview/)
+
+## Siguiente paso: ¿cómo vamos a autenticarnos contra GitLab/GitHub?
+
+Utilizando los tokens que nos dejan generar ambos servicios desde los ajustes, por lo que en esta primera versión no vamos a tener que implementar el login con ningún servicio.
+
+## ¿Cómo ha quedado?
+
+Una vez configurado nuestro token y el nombre del repo que queremos controlar el funcionamiento es supersencillo: cada vez que pulsamos la tecla en el Stream Deck, se hace la petición al servicio correspondiente y se pinta el estado que nos devuelve.
+
+![Configuración del Stream Deck desde Mac.](/images/gitlab-github-streamdeck-config-I1MD.png)
+
+Por ahora es compatible con GitHub Actions y GitLab CI, pero encantado de añadir soporte a otros servicios como Circle CI, Google Cloud Build… o revisar PRs si alguien se anima 😜 .
+
+Como ideas futuras tengo un par de issues abiertas en el repo:
+
+- Poder elegir el repositorio con un select en lugar de tener que escribir el nombre.
+
+- Autorefresco para no tener que andar pulsando la tecla para actualizar.
+
+Pero me encantaría recibir nuevas issues con vuestras ideas si se os ocurre algo.
+
+# Los problemas 🤦🏻‍♂️
+
+## HTML, CSS y JS
+
+Acostumbrado a las facilidades que hoy en día nos dan Vue o React o TypeScript hacerlo “a pelo” ha sido un poco duro… vamos que no me acordaba de todas las comodidades que dan.
+
+No hay ninguna restricción que impida usar frameworks o TypeScript, simplemente no pensé que fuera necesario para este proyecto tan simple.
+
+---
+
+Si queréis ver cómo fue el proceso lo podéis ver en mi canal de Twitch: [SantiMA10](https://twitch.tv/SantiMA10), si aún no me han silenciado todos los directos por poner música con copyright 😅 (las BSO de Los Vengadores y Uncharted 4).
+
+---
+
+[https://github.com/SantiMA10/devops-streamdeck](https://github.com/SantiMA10/devops-streamdeck)
+
+]]></content>
+        <author>
+            <name>Santiago Martín Agra</name>
+            <email>web@santiagomartin.dev</email>
+            <uri>https://santiagomartin.dev</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[¡Hola deno! 🦕]]></title>
+        <id>hola-deno</id>
+        <link href="https://santiagomartin.dev/blog/hola-deno"/>
+        <updated>2020-03-09T10:53:07.000Z</updated>
+        <summary type="html"><![CDATA[Una nueva forma de utilizar TypeScript/JavaScript para crear aplicaciones en el lado del servidor más seguras.]]></summary>
+        <content type="html"><![CDATA[
+![Photo by Daiga Ellaby on Unsplash](/img/hello-deno.jpeg)
+
+El pasado 4 de mayo se publicó la 1.0.0-rc1 de deno, una nueva forma de utilizar JavaScript/TypeScript para crear aplicaciones en el lado del servidor.
+
+https://deno.land/
+
+Seguro que esta descripción os encaja con otra tecnología llamada node y es normal que sea así ya que ambas fueron iniciadas por la misma persona [Ryan Dahl](https://en.wikipedia.org/wiki/Ryan_Dahl).
+
+# ¿En que se diferencian node y deno? 🤔
+
+Por lo que he podido probar estos días yo lo resumiria en 3:
+
+- Soporte para **TypeScript por defecto**.
+- **Seguro por defecto**, si queremos acceder a ciertos elementos del sistema como la red, entorno, sistema de fichero… tendremos que dar esos permisos cuando ejecutemos nuestros programas.
+- **Imports utilizando URLs** en lugar de un gestor de paquetes centralizado. Si utilizais goland os sonará el sistema.
+
+PD: Otra diferencia "importate" es el orden de las silabas no-de -> de-no 😜.
+
+# Show me the code! 😬
+
+## Primero instalar deno
+
+Mi opción recomendada y la única que cuando escribo este post descarga la versión 1.0.0-rc1 es utilizar el siguiente comando:
+
+```sh
+curl -fsSL https://deno.land/x/install/install.sh | sh
+```
+
+👀 No os olvideis de añadir las variables de entorno que nos da el instalador al terminar.
+
+## Hello world
+
+Una vez todo instalado, toca comprobar que funciona, para ello vamos a ejecutar el primer script de deno y que de paso nos permite ver una de las caracteristicas chulas, ¡podemos ejecutar código que este en una URL!
+
+```sh
+deno run https://deno.land/std/examples/welcome.ts
+```
+
+## Piquemos un poco
+
+Una vez nos hemos asegurado que todo funciona… vamos a crear un primer servidor con deno que devuelva siempre hello world.
+
+```typescript
+import { serve } from 'https://deno.land/std/http/server.ts';
+
+const s = serve({ port: 8000 });
+console.log('http://localhost:8000/');
+
+for await (const req of s) {
+	req.respond({ body: 'Hello World\n' });
+}
+```
+
+Lo guardamos en un fichero .ts, por ejemplo lo podemos llamar server.ts, y ejecutamos con deno.
+
+```sh
+deno run server.ts
+```
+
+¡💥💥💥! Como deno es seguro por defecto, no tenemos acceso a la red, necesitamos darle ese permiso para poder ejecutar el servidor.
+
+```sh
+deno run --allow-net server.ts
+```
+
+Ahora ya podemos visitar https://localhost:8080 y ver como deno nos devuelve “Hello world”.
+
+# Bonus track: Deplegando deno en Google Cloud Run 🚀
+
+Es el último paso para acabar de probar una tecnología ponerla en producción.
+
+En este caso vamos a utilizar Google Cloud Run ya que nos permite desplegar contenedores de docker sin preocuparnos por la infraestructura.
+
+## Dockerfile
+
+```dockerfile
+FROM debian
+
+RUN apt-get update
+RUN apt-get upgrade
+RUN apt-get install curl unzip -y
+
+RUN curl -fsSL https://deno.land/x/install/install.sh | sh
+ENV DENO_INSTALL="/root/.deno"
+ENV PATH="$DENO_INSTALL/bin:$PATH"
+ENV PORT="1234"
+
+WORKDIR /usr/src/app
+COPY . .
+
+CMD ["deno", "run", "--allow-env", "--allow-net", "server.ts"]
+```
+
+## El fichero server.ts
+
+Necesitamos hacer un pequeño cambio, para poder utilizar el puerto que Cloud Run nos asigne en la variable de entorno PORT, en lugar de usar siempre el 8080.
+
+```typescript
+import { serve } from 'https://deno.land/std/http/server.ts';
+
+const PORT = parseInt(Deno.env.get('PORT') || '', 10) || 8080;
+
+const s = serve(`0.0.0.0:${PORT}`);
+console.log(`Listen on: ${PORT}`);
+
+for await (const req of s) {
+	req.respond({ body: 'Hello World\n' });
+}
+```
+
+## Generando la imagen y deplegando a Google Cloud Run
+
+Los requisitos para poder hacerlo son simples:
+
+- un proyecto en Google Cloud, con las APIs de Cloud Run y Cloud Build activadas.
+- tener instalada y configurada la cli de Google Cloud, gcloud.
+- Toda la información de como hacer este paso la podeis encontrar en la documentación de Cloud Run, pero yo os lo resumo.
+
+https://cloud.run
+
+### Enviamos la imagen a Cloud Build para que Google la genere
+
+```sh
+gcloud builds submit --tag gcr.io/PROJECT-ID/helloworld
+```
+
+### Desplegamos la imagen en Cloud Run
+
+```sh
+gcloud run deploy --image gcr.io/PROJECT-ID/helloworld --platform managed
+```
+
+## Mi repo de ejemplo
+
+https://github.com/SantiMA10/deno-example
+
+Estos días le estamos dando caña a deno en mi canal de Twitch, por lo que te invito a pasarte si te quedas con ganas de charla sobre deno.
+]]></content>
+        <author>
+            <name>Santiago Martín Agra</name>
+            <email>web@santiagomartin.dev</email>
+            <uri>https://santiagomartin.dev</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[¿Qué opináis de GitHub Actions?]]></title>
+        <id>que-opinais-de-github-actions</id>
+        <link href="https://santiagomartin.dev/blog/que-opinais-de-github-actions"/>
+        <updated>2020-02-05T10:53:07.000Z</updated>
+        <summary type="html"><![CDATA[GitHub Actions es el servicio de CI/CD de GitHub.]]></summary>
+        <content type="html"><![CDATA[
+![¿Qué opináis de GitHub Actions?](/img/que-opinais-de-github-actions.png 'https://twitter.com/CDAOOC/status/1176224452151042054')
+
+A lo mejor os preguntáis que son las GitHub Actions? Si vamos a [la web de GitHub](https://github.com/features/actions) nos dice:
+
+> GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub. Make code reviews, branch management, and issue triaging work the way you want.
+
+Y yo de forma simplificada lo veo como una opción más a la hora de configurar el sistema de CI/CD para nuestros proyectos.
+
+# Ahora sabemos que es pero… ¿merecen la pena?
+
+![GIF](https://media.giphy.com/media/14mgxYFJHXGmoo/giphy.gif 'Ummmmh')
+
+Al principio durante la beta/alpha he de reconocer que no me convencia mucho, aunque me parecía una funcionalidad necesaria.
+
+_Estaba claro que si BitBucket y GitLab tenían sus implementaciones de CI/CD, siendo la de GitLab la mejor para mi gusto y BitBucket… al menos tenía algo que te podía sacar de un apuro, tarde o temprano le iba a tocar el turno a GitHub._
+
+Por un lado el sistema estaba basado en “acciones” que creaba la comunidad, no imagenes de docker como GitLab CI, y además el fichero de configuración me parecía muy poco intuitivo.
+
+Ahora que ya ha salido de beta y es _“world-class CI/CD”_ me decidí a darle una nueva oportunidad aprovechando que arrancaba un miniproyecto para jugar con Stackdriver, Datadog y algún otro sistema de monitorización que encuentre.
+
+Y tras solo 5 intentos fallidos de configuración, y [gracias a una Action creada por la comunidad](https://github.com/GoogleCloudPlatform/github-actions), ya tenía configurado mi servicio de CI/CD para pasar mis tests y desplegar en Google App Engine. 🚀
+
+# ¿Qué opnias de GitHub Actions?
+
+Merece la pena tenerlo en cuenta si tienes tu repo en GitHub y a nivel personal me creo tengo que seguir dándole caña para poder escribir más sobre ellas.
+
+**Y tras esta pequeña chapa ahora es vuestro turno, ¿qué opináis de GitHub Actions?**
+]]></content>
+        <author>
+            <name>Santiago Martín Agra</name>
+            <email>web@santiagomartin.dev</email>
+            <uri>https://santiagomartin.dev</uri>
+        </author>
+    </entry>
+</feed>
