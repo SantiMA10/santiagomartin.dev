@@ -5,6 +5,9 @@
 		"name": "Santiago Martín Agra",
 		"email": "web@santiagomartin.dev"
 	},
+	"engines": {
+		"node": ">=16"
+	},
 	"version": "4.0.0",
 	"private": true,
 	"scripts": {
