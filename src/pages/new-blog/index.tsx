@@ -1,4 +1,4 @@
-import type { GetServerSideProps, NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import { getDocuments } from 'outstatic/server';
 
@@ -34,7 +34,7 @@ const Blog: NextPage<Props> = ({ allPosts }: Props) => {
 
 export default Blog;
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
 	const allPosts = getDocuments('posts', ['title', 'publishedAt', 'slug']) as unknown as Post[];
 	console.log(allPosts);
 

@@ -3865,10 +3865,10 @@ orderedmap@^2.0.0:
   resolved "https://registry.yarnpkg.com/orderedmap/-/orderedmap-2.1.0.tgz#819457082fa3a06abd316d83a281a1ca467437cd"
   integrity sha512-/pIFexOm6S70EPdznemIz3BQZoJ4VTFrhqzu0ACBqBgeLsLxq8e6Jim63ImIfwW/zAD1AlXpRMlOv3aghmo4dA==
 
-outstatic@^0.0.32-rc:
-  version "0.0.32-rc"
-  resolved "https://registry.yarnpkg.com/outstatic/-/outstatic-0.0.32-rc.tgz#82a87a212d9268f21a9bbb803ab647b525f70260"
-  integrity sha512-6NwBYFTQZr1iQNZ0mC2hNEQOqHR2pONqEfuVtMzoZ8XdqidA8DzT3PKRzV23NmPX0znRfl+PfDNT4msI5PPL+A==
+outstatic@^0.0.33-rc:
+  version "0.0.33-rc"
+  resolved "https://registry.yarnpkg.com/outstatic/-/outstatic-0.0.33-rc.tgz#195174ce5221c369e205f59866ec8e0bec6a776e"
+  integrity sha512-Bu6OA8AdlQ8+UblD0t4l3LoKZtsxcwtYXRnWtBa2YaEO+pA18/CFpG/8oqHLBntzkRhUmD23/rVFz9yTWHmO4Q==
   dependencies:
     "@apollo/client" "^3.6.6"
     "@hapi/iron" "^7.0.0"

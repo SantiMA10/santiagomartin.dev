@@ -1,7 +1,7 @@
-import type { GetServerSideProps, NextPage } from 'next';
+import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
-import { getDocumentBySlug } from 'outstatic/server';
+import { getDocumentBySlug, getDocumentPaths } from 'outstatic/server';
 
 import Container from '../../components/Container';
 import MDXContainer from '../../components/MDXContainer';
@@ -25,7 +25,7 @@ const BlogPost: NextPage<Props> = ({ page, githubUrl }: Props) => {
 
 export default BlogPost;
 
-export const getServerSideProps: GetServerSideProps<Props> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
 	if (typeof params?.slug !== 'string') {
 		return {
 			props: {},
@@ -56,4 +56,11 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ params }) 
 			notFound: true,
 		};
 	}
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+	return {
+		paths: getDocumentPaths('posts'),
+		fallback: false,
+	};
 };
