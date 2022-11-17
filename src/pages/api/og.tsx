@@ -6,7 +6,7 @@ export const config = {
 };
 
 const font = fetch(
-	new URL('../../../public/fonts/JetBrainsMono-Regular.ttf', import.meta.url),
+	new URL('../../../public/fonts/JetBrainsMono-Regular.ttf', import.meta.url).toString(),
 ).then((res) => res.arrayBuffer());
 
 export default async function handler(req: NextRequest): Promise<ImageResponse> {

@@ -29,6 +29,7 @@ import { getDocuments } from 'outstatic/server';
 			id: post.slug,
 			link: `https://santiagomartin.dev/blog/${post.slug}`,
 			description: post.description,
+			image: `https://santiagomartin.dev/api/og?title=${post.title}`,
 			author: [author],
 			date: new Date(post.publishedAt),
 		});
