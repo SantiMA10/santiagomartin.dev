@@ -36,7 +36,6 @@ export default Blog;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
 	const allPosts = getDocuments('posts', ['title', 'publishedAt', 'slug']) as unknown as Post[];
-	console.log(allPosts);
 
 	return {
 		props: { allPosts },
