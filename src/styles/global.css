@@ -1,12 +1,20 @@
-#twitch-videos {
+#twitch-videos,
+#blog-posts {
 	display: flex;
 	justify-content: space-around;
+	gap: 8px;
 }
 
-#twitch-videos a {
+#twitch-videos a,
+#blog-posts a {
 	display: flex;
 }
 
-#twitch-videos img {
+#twitch-videos img,
+#blog-posts img {
 	flex-grow: 1;
+}
+
+#thanks {
+	display: none;
 }
