@@ -88,5 +88,5 @@ Pero eso me lo dejo para otro día, aquí está el resumen hasta el día del [tw
 
 ---
 
-Si te ha molado 😍 o tienes alguna duda 🤔 puedes preguntarme en [Twitter](https://twitter.com/SantiMA10b) o durante un directo [en mi canal de Twitch](https://twitch.tv/SantiMA10). También puedes visitar [mi web](https://santiagomartin.dev/) 🌍 donde puedes encontrar mis otros posts, formas de contacto y side projects.
+Si te ha molado 😍 o tienes alguna duda 🤔 puedes preguntarme en [Twitter](https://twitter.com/SantiMA10) o durante un directo [en mi canal de Twitch](https://twitch.tv/SantiMA10). También puedes visitar [mi web](https://santiagomartin.dev/) 🌍 donde puedes encontrar mis otros posts, formas de contacto y side projects.
 
