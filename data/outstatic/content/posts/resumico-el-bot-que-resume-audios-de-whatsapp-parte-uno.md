@@ -24,7 +24,7 @@ El día siguiente tras ver multitud de respuestas, RTs y favoritos, me di cuenta
 
 ---
 
-Si buscas como poder usar resumico sin tener que configurar/mantener nada: puedes apuntarte a [la lista de espera para la alpha](https://resumi.co/).
+Si buscas como poder usar resumico sin tener que configurar/mantener nada: puedes apuntarte a [la lista de espera para la alpha](https://www.resumi.co/).
 
 ---
 
@@ -42,7 +42,7 @@ Tras darle unas vueltas, me di cuenta que podía utilizar ffmpeg para transforma
 
 ### La API de WhatsApp
 
-Por suerte cuando salió la API si había hecho un bot que mandaba mensajes, por lo que parte del proceso configuración ya lo tenía hecho.
+Por suerte cuando salió [la API](https://developers.facebook.com/docs/whatsapp/cloud-api/) si había hecho un bot que mandaba mensajes, por lo que parte del proceso configuración ya lo tenía hecho.
 
 Solo necesitaba "orquestar" el proceso:
 
