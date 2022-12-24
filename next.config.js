@@ -7,7 +7,7 @@ module.exports = {
 		return [
 			{
 				source: '/twitter',
-				destination: 'https://twitter.com/SantiMA10b',
+				destination: 'https://twitter.com/SantiMA10',
 				permanent: false,
 			},
 			{
