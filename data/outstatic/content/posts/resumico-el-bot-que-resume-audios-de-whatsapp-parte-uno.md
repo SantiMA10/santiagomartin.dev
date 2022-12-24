@@ -30,7 +30,7 @@ Como AppEngine no tiene muchos recursos en lugar de usar [whisper](https://githu
 
 ### La voz a texto
 
-Mire la API de WhatsApp y me descargue un audio mio para probar, pero... resulta que pese a que Google dice que admite ficheros de audio en .ogg, la realidad era que no estaba transcribiendo nada 🤦
+Mire la API de WhatsApp y me descargue un audio mio para probar, pero… resulta que pese a que Google dice que admite ficheros de audio en .ogg, la realidad era que no estaba transcribiendo nada 🤦
 
 Tras darle unas vueltas, me di cuenta que podía utilizar ffmpeg para transformar los ficheros .ogg que me daba WhatsApp a .mp3 de los cuales Google si me sacaba el texto.
 
@@ -40,7 +40,7 @@ Por suerte cuando salió la API si había hecho un bot que mandaba mensajes, por
 
 Solo necesitaba "orquestar" el proceso:
 
-![](/images/sin-ti-tulo-2021-03-15-1850-M1OD.png)Y también entender los diferentes tipos de mensajes que se pueden enviar, texto, interactivos con botones, plantillas...
+![](/images/sin-ti-tulo-2021-03-15-1850-M1OD.png)Y también entender los diferentes tipos de mensajes que se pueden enviar, texto, interactivos con botones, plantillas…
 
 ### Toca resumir las transcripciones
 
@@ -56,7 +56,7 @@ En esta primera iteración sólo se hacen resúmenes de audios que tienen una du
 
 # **Los problemas 🤦🏻‍♂️**
 
-### Las limitaciones de WhatsApp
+### Las limitaciones de WhatsApp ❌
 
 Cada mensaje tiene sus limitaciones, por ejemplo, si es texto normal "sólo" puedes mandar \~4000 caracteres. Si es un mensaje con botones ese límite baja a 1/4, \~1000 caracteres.
 
@@ -64,15 +64,15 @@ Si quieres hacer interacciones con botones, esta limitado a 3 por mensaje.
 
 Si quieres enviar un header/footer, solo puedes en mensajes interactivos o plantillas.
 
-### Responder rápido al webhook de WhatsApp
+### Responder rápido al webhook de WhatsApp 🏃
 
 Esto es bastante común, si tardas un poco en responder que sí, el proveedor te lo re-envía y en este caso eso implicaba que me acababa mandando 4 o 5 mensajes con cada transcripción.
 
-La solución, usar la cola de tareas para solo tener que transformar el mensaje y que sea otra parte del sistema quien se encargue de la transcripción, resumen...
+La solución, usar la cola de tareas para solo tener que transformar el mensaje y que sea otra parte del sistema quien se encargue de la transcripción, resumen…
 
 ## La versión del repositorio
 
-En el repositorio en el que está publicado el código de resumico hay varias mejoras sobre lo que he comentado en este artículo: la posibilidad de usar whisper (en lugar del servicio de Google), opciones para transcribir, resumir o las dos cosas a la vez cada audio...
+En el repositorio en el que está publicado el código de resumico hay varias mejoras sobre lo que he comentado en este artículo: la posibilidad de usar whisper (en lugar del servicio de Google), opciones para transcribir, resumir o las dos cosas a la vez cada audio…
 
 Pero eso me lo dejo para otro día, aquí está el resumen hasta el día del [tweet](https://twitter.com/santima10/status/1604933925872160768).
 
