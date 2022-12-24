@@ -1,6 +1,6 @@
 ---
 title: 'resumico, el bot que resume audios de WhatsApp [parte 1]'
-status: 'draft'
+status: 'published'
 author:
   name: 'Santi'
   picture: 'https://avatars.githubusercontent.com/u/7255298?v=4'
@@ -21,6 +21,12 @@ Hace un par de semanas una conversación con [Nukeador](https://twitter.com/nuke
 Tras unos días trabajando en ello probando diferentes opciones, tenía una primera versión, puse un [tweet](https://twitter.com/santima10/status/1604933925872160768) (que está cerca ya de las 100k impresiones) y me fui a dormir.
 
 El día siguiente tras ver multitud de respuestas, RTs y favoritos, me di cuenta que lo mismo esto era más interesante de lo que yo pensaba.
+
+---
+
+Si buscas como poder usar resumico sin tener que configurar/mantener nada: puedes apuntarte a [la lista de espera para la alpha](https://resumi.co/).
+
+---
 
 ## Esa primera versión 🚀
 
