@@ -19,6 +19,7 @@
 	},
 	"dependencies": {
 		"@tailwindcss/typography": "^0.4.1",
+		"@vercel/analytics": "^0.1.6",
 		"@vercel/og": "^0.0.20",
 		"autoprefixer": "^10.3.7",
 		"classnames": "^2.3.1",
