@@ -18,9 +18,9 @@ Si buscas como poder usar resumico sin tener que configurar/mantener nada: puede
 
 ---
 
-Esta vez voy toca hablar del proceso de conseguir un número para usar en resumico.
+Esta vez voy toca hablar del proceso de conseguir un número para usar en resumico y lo que cuesta (más o menos) que este funcionando.
 
-## Un número... ¿para qué?
+## Un número… ¿para qué?
 
 Es como funciona WhatsApp, aquí no hay el concepto de bot o nombre de usuario que tienen otros servicios, aquí todo va por número de teléfono.
 
@@ -36,7 +36,7 @@ Parece que no le gusto al bot de facebook que no pudo acceder y me toco hacer la
 
 No se si una persona llego a revisar esta apelación, pero el mensaje de error cambio de *"no hemos podido acceder"* a "*no podemos verificar que sigas las condiciones de uso de WhatsApp for Business".*
 
-Como me dejaba poner cualquier enlace puse el link al articulo, el link al repositorio... todos sin éxito.
+Como me dejaba poner cualquier enlace puse el link al articulo, el link al repositorio… todos sin éxito.
 
 Al final la solución fue hacer [un fichero markdown con una explicación ](https://github.com/SantiMA10/resumico/blob/main/docs/ABOUT.en.md)acorde a las condiciones de uso y listo.
 
@@ -46,7 +46,7 @@ No quería usar mi propio número de WhatsApp, imaginaros el lío recibiendo aud
 
 En ese momento me acordé de que en Twilio puedes comprar números de teléfono y me decidí a probar suerte.
 
-Lo primero que descubrí es que con la cuenta en modo *"free trial", *tu número solo recibe SMS y/o llamadas de teléfonos que hayas verificado previamente, por tanto no me servía.
+Lo primero que descubrí es que con la cuenta en modo \*"free trial", \*tu número solo recibe SMS y/o llamadas de teléfonos que hayas verificado previamente, por tanto no me servía.
 
 Después una vez tenía un número comprado, descubrí que por defecto no puedes recibir SMS de servicios tipo 2FA, tienes que abrir un ticket y solicitar que te lo activen. Además una vez activado tampoco te garantizan que te vayan a llegar 🤦🏻‍♂️.
 
@@ -82,13 +82,11 @@ Luego en WhatsApp hay muchos depende:
 
 Para los resúmenes se utiliza la API de OpenAI depende de:
 
-- El modelo que utilices, en el caso de resumico: *Davinci, *el más poderoso.
+- El modelo que utilices, en el caso de resumico: \*Davinci, \*el más poderoso.
 
 - El número de tokens que utilice tu petición (0,02$/1k tokens), en el caso de resumico el máximo de tokens por resumen es 120.
 
 Para las transcripciones usando Whisper depende 100% de la infraestructura en la que lo tengas desplegado, ahora mismo mientras escribo este post está dentro de la capa gratuita de Google Cloud.
-
-
 
 Hasta aquí esta tercera parte, no se si habrá cuarta, pero si la hay no tengo muy claro que voy a contar 😅.
 
@@ -97,6 +95,4 @@ Repositorio del proyecto: [https://github.com/SantiMA10/resumico](https://github
 ---
 
 Si te ha molado 😍 o tienes alguna duda 🤔 puedes preguntarme en [Twitter](https://twitter.com/SantiMA10) o durante un directo [en mi canal de Twitch](https://twitch.tv/SantiMA10). También puedes visitar [mi web](https://santiagomartin.dev/) 🌍 donde puedes encontrar mis otros posts, formas de contacto y side projects.
-
-
 
