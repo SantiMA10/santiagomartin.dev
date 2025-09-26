@@ -12,13 +12,7 @@ publishedAt: '2022-11-17T10:53:07.000Z'
 
 Aquí te cuento en que ando ahora mismo:
 
-- 👨‍💻 Trabajo en Voicemod como Software Engineer.
+- 👨‍💻 Trabajo en Voicemod como Senior Software Engineer.
 
-- 🤖 Estoy trabajando en un bot de WhatsApp que transcribe y resume audios.
-
-- 🚶🏻 Ando unos 12k pasos al día.
-
-- 🏡 Aún estoy migrando cosas de otros Hubs a mi Home Assistant Yellow.
-
-- 🏀 Intento jugar al baloncesto una vez por semana.
+- 🚶🏻 Estoy entrenando para correr 5Km en 8 semanas.
 
